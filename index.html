@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Kokoa Talk</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">18:43</div>
+      <div class="status-bar__column">
+        <span>100%</span>
+        <i class="fas fa-battery-full fa-lg"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+
+    <header class="welcome-header">
+      <h1 class="welcome-header__title">Welcome to KokoaTalk</h1>
+      <p class="welcome-header__text">
+        If you have a Kokoa Account, log in with your email or phone number.
+      </p>
+    </header>
+
+    <!-- form 태그의 method 속성 get(URL노출)으로 진행(post 방식은 서버(백엔드) 통신요) -->
+    <form action="friends.html" method="get" class="login-form">
+      <!-- CSS에 태그, 속성 활용(클래스명 미활용: login-form__input 클래스, login-form__btn 클래스) -->
+      <!-- input 태그의 name 속성은 서버(백엔드)에 전송할 때 필요 -->
+      <input
+        class="login-form__input"
+        required
+        name="username"
+        type="text"
+        placeholder="Email or phone number"
+      />
+      <input
+        class="login-form__input"
+        name="password"
+        type="password"
+        placeholder="Password"
+      />
+      <input class="login-form__btn" type="submit" value="Log In" />
+      <input class="login-form__btn" type="submit" value="Sign Up" />
+
+      <a href="#">Find Kokoa Account or Password</a>
+    </form>
+
+    <!-- fontawesome Kit's Code CDN-->
+    <script
+      src="https://kit.fontawesome.com/8d39c9ab43.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
