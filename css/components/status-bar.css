@@ -4,7 +4,20 @@
   /* (p1/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
   justify-content: center;
 
+  /* 상태표시줄 (step1/4) 화면 최상단부로 위치 고정 및 배경색 지정으로 body {height: 1000vh} 테스트시 불투명하게 만듬*/
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+
+  /* 상태표시줄 (step2/4) 너비 속성 부여 */
+  width: 100%;
+
+  /* 상태표시줄 (setp3/4) justify-content, margin 속성만으로는 배치에 한계 */
   padding: 5px 3px;
+
+  /* 상태표시줄 (setp4/4) padding 지정한 공간은 사용불가, CSS는 해당 padding 공간만큼 추가로 크기를 보태어 표시함 */
+  /* box-sizing 속성__CSS에게 "내가 padding을 줘도 신경쓰지 마. 내 box 사이즈를 늘리지 말아줘.(padding 공간으로 box 사이즈가 작아져도 상관없다" */*/
+  box-sizing: border-box;
 }
 
 .status-bar__column {
@@ -22,7 +35,7 @@
   justify-content: center;
 }
 
-.status-bar__column:nth-child(3) {
+.status-bar__column:last-child {
   /* (p4/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
   display: flex;
   justify-content: flex-end;

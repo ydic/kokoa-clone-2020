@@ -1,0 +1,76 @@
+.nav-bar {
+  /* 메뉴/탭 아이콘 (step1/4) 화면 최하단부로 위치 고정 */
+  position: fixed;
+  bottom: 0;
+
+  /* 메뉴/탭 아이콘 (step2/4) 너비 속성 부여  */
+  width: 100%;
+
+  /* 메뉴/탭 아이콘 (step3/4) ul태그의 justify-content 속성 설정만으로는 배치에 한계  */
+  padding: 20px 50px;
+
+  /* 메뉴/탭 아이콘 (step4/4) padding 지정한 공간은 사용불가, CSS는 해당 padding 공간만큼 추가로 크기를 보태어 표시함 */
+  /* box-sizing 속성__CSS에게 "내가 padding을 줘도 신경쓰지 마. 내 box 사이즈를 늘리지 말아줘.(padding 공간으로 인해 box 사이즈가 작아져도 상관없다)" */
+  box-sizing: border-box;
+
+  background-color: #f9f9fa;
+
+  /* nav-bar 시각적 구분용 상단부 실선 */
+  border-top: 1px solid rgba(121, 121, 121, 0.2);
+}
+.nav-bar__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar__link {
+  color: #2e363e;
+
+  /* nav-bar__notification 클래스의 position: absolute는 가장 가까운 relative를 가진 부모(anchor 태그인 nav-bar__link 클래스) 기준으로 움직임 */
+  position: relative;
+}
+
+.nav-bar__notification {
+  background-color: tomato;
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  /* unread notification 갯수 표시하는 숫자의 위치 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-weight: 600;
+
+  /* unread notification 갯수 표시하는 숫자가 메뉴/탭 아이콘보다 우선하는 레이어 */
+  /* position: absolute는 가장 가까운 relative를 가진 부모(anchor 태그인 nav-bar__link 클래스) 기준으로 움직임 */
+  /* position 속성을 이용하면 요소를 겹치게 놓을 수 있습니다.
+  이때 요소들의 수직 위치를 z-index 속성으로 정합니다.
+  값은 정수이며, 숫자가 클 수록 위로 올라오고, 숫자가 작을 수록 아래로 내려갑니다. */
+
+  /* relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다면,
+  absolute는 position: static 속성을 가지고 있지 않은 부모를 기준으로 움직입니다.
+  만약 부모 중에 포지션이 relative, absolute, fixed인 태그가 없다면
+  가장 위의 태그(body)가 기준이 됩니다. */
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+}
+
+/* nav-bar__notification 클래스의 CSS 속성과 동일한 원리 적용*/
+.nav-bar__notification-dot {
+  background-color: tomato;
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  position: absolute;
+  left: 32px;
+  bottom: 30px;
+}

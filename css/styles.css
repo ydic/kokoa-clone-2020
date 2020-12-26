@@ -14,9 +14,13 @@
 
 /* Components */
 @import "components/status-bar.css";
+@import "components/nav-bar.css";
+@import "components/screen-header.css";
+@import "components/user-component.css";
 
 /* Screens */
 @import "screens/login.css";
+@import "screens/friends.css";
 
 body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -24,6 +28,14 @@ body {
 
   /* Google Fonts CDN */
   font-family: "Open Sans", sans-serif;
+
+  /* status-bar 클래스 position:fixed 설정으로 인해 발생하는 겹침 현상(screen-header 클래스) 무효화  */
+  margin-top: 26px;
+
+  /* position:fixed 확인용 코드 */
+  /* height: 1000vh; */
+
+  color: var(--black);
 }
 
 .welcome-header {

@@ -3,6 +3,14 @@ input:focus {
   outline: none;
 }
 
+a {
+  /* 부모 속성(디폴트: black)으로부터 텍스트 컬러 상속(inherit) */
+  color: inherit;
+
+  /* anchor 태그의 밑줄 속성 무효화 */
+  text-decoration: none;
+}
+
 /* Reset CSS 2.0__브라우저 margin padding etc 초기값 제거 */
 
 html,
