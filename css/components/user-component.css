@@ -9,22 +9,25 @@
 .user-component 
   /* user-component__avatar 클래스와 user-component__text 클래스가 옆으로 정렬됨 */
 .user-component__column:first-child {
-  background-color: red;
-
   display: flex;
   align-items: center;
 }
 
 .user-component__column:last-child {
-  background-color: yellow;
-
   color: rgba(0, 0, 0, 0.5);
 
   display: flex;
+
+  /* own */
   align-items: center;
 }
 
-.user-component__avatar {
+/* own__span 태그와 i 태그 사이에 margin-right 속성 부여 */
+.user-component__column:last-child span {
+  margin-right: 4px;
+}
+
+.user-component .user-component__avatar {
   width: 70px;
   height: 70px;
   border-radius: 30px;
