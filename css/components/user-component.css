@@ -2,6 +2,7 @@
   /* 2개의 user-component__column 클래스 간 space-between 화면 배치 */
   justify-content: space-between;
 
+  /* own__ .user-componenet .user-component__column:first-child {display: flex;} 부분과 코드 중복되나, 본 형태로 만들지 않으면 2개의 user-component__column 클래스가 두 줄로 배치되는 현상 발생*/
   display: flex;
 }
 
@@ -18,8 +19,11 @@
 
   display: flex;
 
+  flex-direction: column;
+  align-items: flex-end;
+
   /* own */
-  align-items: center;
+  justify-content: center;
 }
 
 /* own__span 태그와 i 태그 사이에 margin-right 속성 부여 */
@@ -59,6 +63,17 @@
 .user-component__title--not-bold {
   font-weight: 400;
 }
+
+/* own__user-component.css 코드의 user-component__column:last-child CSS 속성의 변형 */
+/* .user-component__column--flex-direction {
+  color: rgba(0, 0, 0, 0.4);
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
+
+  justify-content: center;
+} */
 
 .user-component__time {
   margin-bottom: 5px;
