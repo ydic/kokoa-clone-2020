@@ -31,19 +31,7 @@
 }
 
 .nav-bar__notification {
-  background-color: tomato;
-  width: 28px;
-  height: 28px;
-
-  border-radius: 50%;
-
-  /* unread notification 갯수 표시하는 숫자의 위치 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  font-weight: 600;
+  /* badge.css 코드의 badge 클래스 CSS 속성 기반에 position:absolute 속성 부여 */
 
   /* unread notification 갯수 표시하는 숫자가 메뉴/탭 아이콘보다 우선하는 레이어 */
   /* position: absolute는 가장 가까운 relative를 가진 부모(anchor 태그인 nav-bar__link 클래스) 기준으로 움직임 */

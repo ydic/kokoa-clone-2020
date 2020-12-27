@@ -5,6 +5,9 @@
   padding: 15px 0px;
   font-size: 18px;
   margin-bottom: 10px;
+
+  /* margin-top에 negative 속성 부여해 다른 페이지 세부내용 시작점과 유사하게 화면배치  */
+  margin-top: -10px;
 }
 
 /* i 태그(italic) 기반의 fontawesome 아이콘의 색상 설정  */

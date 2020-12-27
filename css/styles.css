@@ -17,6 +17,7 @@
 @import "components/nav-bar.css";
 @import "components/screen-header.css";
 @import "components/user-component.css";
+@import "components/badge.css";
 
 /* Screens */
 @import "screens/login.css";
@@ -60,4 +61,10 @@ body {
 
   /* 텍스트 불투명도 조정 */
   opacity: 0.7;
+}
+
+/* 제목(screen-header 클래스) 아래에 나타나는 세부내용 영역의 좌우에 padding 속성 부여*/
+/* friends.html 페이지는 friends.css 에서 friends-screen 클래스명에 대해 동일한 속성 부여 */
+.main-screen {
+  padding: 0px var(--horizontal-space);
 }

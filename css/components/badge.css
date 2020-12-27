@@ -1,0 +1,16 @@
+/* nav-bar.css 코드의 nav-bar__notification 클래스 속성과 유사하나 position:absolute 속성은 무효화*/
+.badge {
+  background-color: tomato;
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  /* unread notification 갯수 표시하는 숫자의 위치 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-weight: 600;
+}
