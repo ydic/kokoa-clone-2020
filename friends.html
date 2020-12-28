@@ -37,7 +37,7 @@
       <i class="fas fa-chevron-right fa-xs"></i>
     </a>
 
-    <!-- friends.html main 태그 클래스명: friends-screen -->
+    <!-- friends.html main 태그 클래스명: friends-screen(수평으로 padding 적용) -->
     <main class="friends-screen">
       <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(user-component.css) -->
       <div class="user-component">
@@ -76,6 +76,7 @@
           </div>
 
           <div class="user-component__column">
+            <!-- div 태그로 감싼 이유는 부모 태그 클래스 CSS 속성(user-component.css 코드의 .user-component__column: last-child 속성)의 flex 방향(flex-direction: column)에 영향 받지 않도록 하기 위함 -->
             <div>
               <span>2</span>
               <i class="fas fa-chevron-right fa-xs"></i>

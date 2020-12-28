@@ -51,14 +51,31 @@
 /* nav-bar__notification 클래스의 CSS 속성과 동일한 원리 적용*/
 .nav-bar__notification-dot {
   background-color: tomato;
-  width: 10px;
-  height: 10px;
-
   border-radius: 50%;
 
   display: flex;
 
   position: absolute;
+}
+
+.nav-bar__notification-dot--ellipsis {
+  width: 10px;
+  height: 10px;
+
   left: 32px;
   bottom: 30px;
+}
+
+/* 숙제 #6.21__코드 대조 검사 확인요 */
+.nav-bar__notification-dot--cog {
+  width: 8px;
+  height: 8px;
+
+  left: 20px;
+  bottom: 22px;
+}
+
+/* 숙제 #6.21__코드 대조 검사 확인요 */
+.nav-bar__notification-dot--father_relative {
+  position: relative;
 }

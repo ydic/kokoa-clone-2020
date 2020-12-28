@@ -4,6 +4,10 @@
 
   /* own__ .user-componenet .user-component__column:first-child {display: flex;} 부분과 코드 중복되나, 본 형태로 만들지 않으면 2개의 user-component__column 클래스가 두 줄로 배치되는 현상 발생*/
   display: flex;
+
+  /* 숙제(채팅방 목록이 2개 이상일 때 각 항목(채팅방) 사이에 margin-bottom 속성 부여) #6.21__코드 대조 검사 확인요 */
+  /* friend.html / chats.html / more.html 모두 user-component 클래스의 margin-bottom 속성에 영향 받으므로 적용 무효화 */
+  /* margin-bottom: 20px; */
 }
 
 /* user-component__column 클래스를 가진 2개의 div 태그가 옆으로 정렬됨 */
@@ -58,6 +62,12 @@
   margin-top: 8px;
   font-size: 17px;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.user-component__subtitle i {
+  margin-left: 4px;
+  color: tomato;
+  opacity: 0.7;
 }
 
 .user-component__title--not-bold {

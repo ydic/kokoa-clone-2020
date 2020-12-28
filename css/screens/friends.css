@@ -12,7 +12,7 @@
 
 /* i 태그(italic) 기반의 fontawesome 아이콘의 색상 설정  */
 .friends-display-link i {
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--color-gray);
 }
 
 .friends-screen {
@@ -22,7 +22,10 @@
 .friends-screen__channel {
   /* 경계선(border-top) 기준으로 margin-top, padding-top */
   margin-top: 25px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+  /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
+  border-top: var(--main-border);
+
   padding-top: 15px;
 }
 
@@ -33,5 +36,5 @@
   display: flex;
   justify-content: space-between;
 
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--color-gray);
 }

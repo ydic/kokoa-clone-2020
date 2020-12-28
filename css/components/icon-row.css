@@ -1,0 +1,23 @@
+/* 4개의 find-icons__icon 클래스를 한 줄의 수평축으로 화면 배치 */
+/*more-suggestions 클래스의 CSS 속성에서는 icon-row 클래스(justify-content: space-between 속성) 적용 무효화 */
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* i 태그와 span 태그를 한 줄의 수직축으로 화면 배치 */
+.icon-row__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* i 태그의 크기를 fontawesome syntax(ex: fa-lg) 대신에 font-size 속성으로 설정 */
+.icon-row__icon i {
+  font-size: 30px;
+}
+
+/* icon-row__icon i 태그를 기준으로 margin, padding 지양(i 태그 fontawesome 아이콘마다 높이 상이하기 때문) */
+.icon-row__icon-text {
+  margin-top: 18px;
+}

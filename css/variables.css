@@ -2,5 +2,12 @@
   --yellow: #fae100;
   --black: #2e363e;
 
+  /* 페이지별 세부내용 영역에서 좌우 여백 생성 용도 */
   --horizontal-space: 25px;
+
+  /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
+  --main-border: 1px solid rgba(0, 0, 0, 0.2);
+
+  --color-gray: rgba(0, 0, 0, 0.4);
+  --color-gray-light: rgba(0, 0, 0, 0.2);
 }

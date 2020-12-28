@@ -1,0 +1,115 @@
+.recommended-friends {
+  /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
+  border-top: var(--main-border);
+  border-bottom: var(--main-border);
+
+  margin: 40px 0px;
+  padding: 25px 0px;
+}
+
+.recommended-friends__title {
+  font-size: 16px;
+  color: var(--color-gray);
+}
+
+.recommended-friends span {
+  /* span 태그는 inline 속성이므로 margin 적용하려면 display: block 으로 속성 지정 요망 */
+  display: block;
+  margin: 80px 0;
+
+  text-align: center;
+
+  font-size: 18px;
+  color: var(--color-gray);
+}
+
+.open-chat__header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--black);
+  margin-bottom: 25px;
+}
+
+.open-chat__header span {
+  color: var(--color-gray);
+}
+
+.open-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.open-post__title {
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.open-post__hashtags {
+  text-decoration: uppercase;
+  color: var(--color-gray);
+}
+
+.open-post__members {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.open-post__members img {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.open-post__member-count {
+  color: var(--color-gray);
+  font-size: 14px;
+}
+
+/* open-post__members 클래스 내부에 있는 divvider 클래스로 적용범위 한정*/
+.open-post__members .divider {
+  width: 1.15px;
+  height: 12px;
+  background-color: var(--color-gray-light);
+  margin: 0px 5px;
+}
+
+.open-post__member-status {
+  color: #ffb0e0;
+}
+
+.open-post__photo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+/* postion: absolute 속성을 가진 자식 태그가 찾으려는 부모 태그의 position: relative 속성 */
+.open-post__photo {
+  position: relative;
+}
+.open-post__heart-count {
+  /* open-post__heart-count 클래스는 position: absolute 설정으로 인해 relative 부모 태그를 찾으려고 함 */
+  position: absolute;
+
+  top: 6px;
+  right: 6px;
+  font-size: 12px;
+
+  background-color: var(--black);
+  color: white;
+  padding: 4px 6px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.open-post__heart-count i {
+  font-size: 9px;
+}
+.open-post__heart-count span {
+  margin-left: 4px;
+}

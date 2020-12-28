@@ -5,8 +5,9 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chats - KokoaTalk</title>
+    <title>Settings - KokoaTalk</title>
   </head>
+
   <body>
     <div class="status-bar">
       <div class="status-bar__column">
@@ -21,39 +22,8 @@
       </div>
     </div>
 
-    <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(screen-header.css) -->
-    <header class="screen-header">
-      <h1 class="screen-header__title">Chats</h1>
-      <div class="screen-header__icons">
-        <span><i class="fas fa-search fa-lg"></i></span>
-        <span><i class="far fa-comment-dots fa-lg"></i></span>
-        <span><i class="fas fa-music fa-lg"></i></span>
-        <span><i class="fas fa-cog fa-lg"></i></span>
-      </div>
-    </header>
-
-    <!-- chats.html main 태그 클래스명: main-screen(수평으로 padding 적용) -->
-    <main class="main-screen">
-      <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(user-component.css) -->
-      <div class="user-component">
-        <div class="user-component__column">
-          <img src="#" class="user-component__avatar" />
-          <div class="user-component__text">
-            <h4 class="user-component__title">KokoaTalk</h4>
-            <h6 class="user-component__subtitle">
-              Please check My Kokoa Account Info
-            </h6>
-          </div>
-        </div>
-
-        <!-- <div class="user-component__column--flex-direction"> -->
-        <div class="user-component__column">
-          <span class="user-component__time">21:22</span>
-          <!-- 질문: span 태그가 아닌 div 태그로 작성하는 이유? -->
-          <div class="badge">1</div>
-        </div>
-      </div>
-    </main>
+    <!-- settings.html main 태그 클래스명: main-screen(수평으로 padding 적용) -->
+    <main class="main-screen"></main>
 
     <nav class="nav-bar">
       <ul class="nav-bar__list">
@@ -66,8 +36,8 @@
         <li class="nav-bar__btn">
           <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="chats.html">
-            <i class="fas fa-comment fa-2x"></i>
-            <span class="nav-bar__notification">1</span>
+            <i class="far fa-comment fa-2x"></i>
+            <span class="nav-bar__notification badge">1</span>
           </a>
         </li>
         <li class="nav-bar__btn">
@@ -80,7 +50,9 @@
           <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="more.html">
             <i class="fas fa-ellipsis-h fa-2x"></i>
-            <span class="nav-bar__notification-dot"></span>
+            <span
+              class="nav-bar__notification-dot nav-bar__notification-dot--ellipsis"
+            ></span>
           </a>
         </li>
       </ul>

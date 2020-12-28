@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More - KokoaTalk</title>
+  </head>
+
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fas fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">18:43</div>
+      <div class="status-bar__column">
+        <span>100%</span>
+        <i class="fas fa-battery-full fa-lg"></i>
+        <i class="fas fa-bolt"></i>
+      </div>
+    </div>
+
+    <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(screen-header.css) -->
+    <header class="screen-header">
+      <h1 class="screen-header__title">More</h1>
+      <div class="screen-header__icons">
+        <span><i class="fas fa-search fa-lg"></i></span>
+        <span><i class="fas fa-music fa-lg"></i></span>
+
+        <!-- 과제 #6.21__코드 대조 검사 확인요 -->
+        <a class="nav-bar__notification-dot--father_relative" href="#">
+          <span>
+            <a href="settings.html">
+              <i class="fas fa-cog fa-lg"></i>
+            </a>
+          </span>
+          <span
+            class="nav-bar__notification-dot nav-bar__notification-dot--cog"
+          ></span>
+        </a>
+      </div>
+    </header>
+
+    <!-- more.html main 태그 클래스명: main-screen(수평으로 padding 적용), more-screen(icon-row 클래스 margin-top 적용) -->
+    <main class="main-screen more-screen">
+      <div class="user-component">
+        <div class="user-component__column">
+          <img src="#" class="user-component__avatar" />
+          <div class="user-component__text">
+            <h4 class="user-component__title">Linh</h4>
+            <h6 class="user-component__subtitle">
+              +84 123-456-789<i class="fas fa-exclamation-circle"></i>
+            </h6>
+          </div>
+        </div>
+
+        <div class="user-component__column">
+          <i class="far fa-comment-alt fa-2x"></i>
+        </div>
+      </div>
+
+      <!-- 질문: div 태그로 만든 이유? -->
+      <div class="icon-row">
+        <!-- 질문: div 태그로 만든 이유? -->
+        <div class="icon-row__icon">
+          <i class="far fa-calendar"></i
+          ><span class="icon-row__icon-text">Calender</span>
+        </div>
+        <div class="icon-row__icon">
+          <i class="far fa-smile-beam"></i
+          ><span class="icon-row__icon-text">Emoticons</span>
+        </div>
+        <div class="icon-row__icon">
+          <i class="fas fa-paint-roller"></i
+          ><span class="icon-row__icon-text">Themes</span>
+        </div>
+        <div class="icon-row__icon">
+          <i class="fas fa-user-circle"></i
+          ><span class="icon-row__icon-text">Account</span>
+        </div>
+      </div>
+
+      <!-- more-suggestions 클래스의 CSS 속성에서는 icon-row 클래스(justify-content: space-between 속성) 적용 무효화 -->
+      <div class="more-suggestions">
+        <h4 class="more-suggestions__title">Suggestions</h4>
+        <!-- 질문: div 태그로 만든 이유? -->
+        <div class="more-suggestions__icons">
+          <!-- 질문: div 태그로 만든 이유? -->
+          <div class="icon-row__icon more-suggestions__icon">
+            <div class="more-suggestions__icon-image">
+              <i class="fas fa-quote-right"></i>
+            </div>
+            <!-- 한 줄 속성인 span 태그를 br 태그로 두 줄로 변경함(more-suggestions__icon-text 내용이 길어질 수록 아이콘 간 불필요한 여백이 증가하는 현상 무효화) -->
+            <span class="more-suggestions__icon-text"
+              >Kokoa<br />
+              Story</span>
+          </div>
+          <div class="icon-row__icon">
+            <div class="more-suggestions__icon-image">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <span class="more-suggestions__icon-text">Kokoa</br> friends</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="nav-bar">
+      <ul class="nav-bar__list">
+        <li class="nav-bar__btn">
+          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
+          <a class="nav-bar__link" href="friends.html">
+            <i class="far fa-user fa-2x"></i>
+          </a>
+        </li>
+        <li class="nav-bar__btn">
+          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
+          <a class="nav-bar__link" href="chats.html">
+            <i class="far fa-comment fa-2x"></i>
+            <span class="nav-bar__notification badge">1</span>
+          </a>
+        </li>
+        <li class="nav-bar__btn">
+          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
+          <a class="nav-bar__link" href="find.html">
+            <i class="fas fa-search fa-2x"></i>
+          </a>
+        </li>
+        <li class="nav-bar__btn">
+          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
+          <a class="nav-bar__link" href="more.html">
+            <i class="fas fa-ellipsis-h fa-2x"></i>
+            <span
+              class="nav-bar__notification-dot nav-bar__notification-dot--ellipsis"
+            ></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- fontawesome Kit's Code CDN-->
+    <script
+      src="https://kit.fontawesome.com/8d39c9ab43.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

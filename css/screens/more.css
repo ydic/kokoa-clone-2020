@@ -1,0 +1,50 @@
+.more-screen .icon-row {
+  /* more-suggestions__title 클래스와 icon-row 클래스와의 내용 구분용 margin-top 속성 여백 부여 */
+  margin-top: 35px;
+}
+
+/*more-suggestions 클래스의 CSS 속성에서는 icon-row 클래스(justify-content: space-between 속성) 적용 무효화 */
+.more-suggestions {
+  /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
+  border-top: var(--main-border);
+  /* border-bottom: var(--main-border); */
+
+  margin-top: 40px;
+  padding-top: 25px;
+}
+
+.more-suggestions__title {
+  font-size: 16px;
+  font-weight: 600;
+  /* color: var(--black); */
+}
+
+/* flex-direction:column, align-items:center 속성은 icon-row__icon 클래스의 CSS 코드 내용을 인용하여 적용함 */
+.more-suggestions__icons {
+  display: flex;
+  margin-top: 30px;
+}
+
+/* icon-row__icon 클래스 CSS 속성 기반으로 more-suggestions__icon 클래스의 CSS 속성 추가로 부여 */
+.more-suggestions__icon {
+  margin-right: 30px;
+}
+
+.more-suggestions__icon-image {
+  width: 50px;
+  height: 50px;
+  background-color: var(--yellow);
+  border-radius: 10px;
+
+  /* fontawesome 아이콘은 텍스트 형식이므로 위치 조정을 위해 display: flex 속성으로 변경함 */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* icon-row__icon-text 클래스의 margin-top 속성값과 다른 수치로 설정  */
+.more-suggestions__icon-text {
+  margin-top: 10px;
+  text-align: center;
+}
