@@ -1,0 +1,41 @@
+.alt-header {
+  display: flex;
+
+  /* 질문: alt-header:first-child 부분에 margin-right: auto / alt-header:last-child 부분에 margin-left: auto (alt-header 부분에서 justify-content: space-between 적용하지 않음) */
+  justify-content: center;
+
+  align-items: center;
+
+  /* alt-header 클래스에 수평으로 padding 적용 */
+  padding: var(--horizontal-space);
+
+  /* 제목(alt-header 클래스) 영역과 세부내용 영역(main-screen) 사이에 margin-bttom 속성 부여 */
+  margin-bottom: 15px;
+}
+
+.alt-header__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* 질문: alt-header:first-child 부분에 margin-right: auto / alt-header:last-child 부분에 margin-left: auto (alt-header 부분에서 justify-content: space-between 적용하지 않음) */
+.alt-header__column:first-child {
+  margin-right: auto;
+}
+
+/* 질문: alt-header:first-child 부분에 margin-right: auto / alt-header:last-child 부분에 margin-left: auto (alt-header 부분에서 justify-content: space-between 적용하지 않음) */
+.alt-header__column:last-child {
+  margin-left: auto;
+}
+
+/* 질문: own__속칭 삼선 아이콘 i 태그 추가 이후 아이콘 간 영역 구분용으로 margin-left 부여  */
+/* 질문: margin-right:auto, margin-left:auto 발상 폐기하고 다른 방식으로 코딩해야 하는지? */
+.alt-header__column:last-child span:last-child {
+  margin-left: 10px;
+}
+
+/* 질문: own__속칭 삼선 아이콘 i 태그 추가 이후 흐트러진 alt-header__title 중앙 정렬 복구용으로 margin-left 부여 */
+/* 질문: margin-right:auto, margin-left:auto 발상 폐기하고 다른 방식으로 코딩해야 하는지? */
+.alt-header__column:nth-child(2) {
+  margin-left: 30px;
+}

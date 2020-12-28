@@ -35,24 +35,26 @@
     <!-- chats.html main 태그 클래스명: main-screen(수평으로 padding 적용) -->
     <main class="main-screen">
       <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(user-component.css) -->
-      <div class="user-component">
-        <div class="user-component__column">
-          <img src="#" class="user-component__avatar" />
-          <div class="user-component__text">
-            <h4 class="user-component__title">KokoaTalk</h4>
-            <h6 class="user-component__subtitle">
-              Please check My Kokoa Account Info
-            </h6>
+      <a href="chat.html">
+        <div class="user-component">
+          <div class="user-component__column">
+            <img src="#" class="user-component__avatar" />
+            <div class="user-component__text">
+              <h4 class="user-component__title">Linh</h4>
+              <h6 class="user-component__subtitle">
+                Please check My Kokoa Account Info
+              </h6>
+            </div>
+          </div>
+
+          <!-- <div class="user-component__column--flex-direction"> -->
+          <div class="user-component__column">
+            <span class="user-component__time">21:22</span>
+            <!-- 질문: span 태그가 아닌 div 태그로 작성하는 이유? -->
+            <div class="badge">1</div>
           </div>
         </div>
-
-        <!-- <div class="user-component__column--flex-direction"> -->
-        <div class="user-component__column">
-          <span class="user-component__time">21:22</span>
-          <!-- 질문: span 태그가 아닌 div 태그로 작성하는 이유? -->
-          <div class="badge">1</div>
-        </div>
-      </div>
+      </a>
     </main>
 
     <nav class="nav-bar">
