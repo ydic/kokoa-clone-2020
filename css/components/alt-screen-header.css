@@ -1,4 +1,7 @@
 .alt-header {
+  /* z-index 속성은 layer 개념이며, absolute position 또는 fixed postion에 대해서 설정할 수 있음 */
+  z-index: 1;
+
   display: flex;
 
   /* 질문: alt-header:first-child 부분에 margin-right: auto / alt-header:last-child 부분에 margin-left: auto (alt-header 부분에서 justify-content: space-between 적용하지 않음) */
@@ -7,10 +10,21 @@
   align-items: center;
 
   /* alt-header 클래스에 수평으로 padding 적용 */
-  padding: var(--horizontal-space);
+  padding: 0 var(--horizontal-space);
+
+  /* 질문: own__alt-header 클래스에서 top:26px 설정하는 것과 마찬가지? / z-index 속성으로 layer 문제는 해결해도 화면배치 위치 문제는 padding-top 또는 top 속성으로 해결하는 것이 최선인지? */
+  padding-top: 40px;
 
   /* 제목(alt-header 클래스) 영역과 세부내용 영역(main-screen) 사이에 margin-bttom 속성 부여 */
+  /* 질문: main-chat 클래스는 레이어 초기값(z-index:0) 상태이지만 alt-header 클래스는 그 상위의 레이어(z-index: 1) 이므로 레이어가 달라 margin-bottom 속성 설정이 의미가 없는 것인지? */
   margin-bottom: 15px;
+}
+
+/* (s1/3)margin-right:auto, margin-left:auto 지정만으로는 해결되지 않는 alt-header 중앙정렬 문제 해결법 */
+.alt-header__column {
+  /* position: absolute 속성을 이용해 중앙정렬 하는 방법은 CSS에서 이상하게 보이기 때문에 그 대신에 모든 열이 같은 너비를 갖도록 함*/
+  /* alt-header__column 갯수가 3개이므로 width: 33% 적용 */
+  width: 33%;
 }
 
 .alt-header__title {
@@ -26,16 +40,20 @@
 /* 질문: alt-header:first-child 부분에 margin-right: auto / alt-header:last-child 부분에 margin-left: auto (alt-header 부분에서 justify-content: space-between 적용하지 않음) */
 .alt-header__column:last-child {
   margin-left: auto;
+
+  /* (s2/3)margin-right:auto, margin-left:auto 지정만으로는 해결되지 않는 alt-header 중앙정렬 문제 해결법 */
+  display: flex;
+  justify-content: flex-end;
 }
 
-/* 질문: own__속칭 삼선 아이콘 i 태그 추가 이후 아이콘 간 영역 구분용으로 margin-left 부여  */
+/* 질문: 속칭 삼선 아이콘 i 태그 추가 이후 아이콘 간 영역 구분용으로 margin-left 부여  */
 /* 질문: margin-right:auto, margin-left:auto 발상 폐기하고 다른 방식으로 코딩해야 하는지? */
-.alt-header__column:last-child span:last-child {
-  margin-left: 10px;
+.alt-header__column span:last-child {
+  margin-left: 20px;
 }
 
-/* 질문: own__속칭 삼선 아이콘 i 태그 추가 이후 흐트러진 alt-header__title 중앙 정렬 복구용으로 margin-left 부여 */
-/* 질문: margin-right:auto, margin-left:auto 발상 폐기하고 다른 방식으로 코딩해야 하는지? */
+/* (s3/3)margin-right:auto, margin-left:auto 지정만으로는 해결되지 않는 alt-header 중앙정렬 문제 해결법 */
 .alt-header__column:nth-child(2) {
-  margin-left: 30px;
+  /* text-align 속성을 활용해 가로축으로 중앙정렬 */
+  text-align: center;
 }

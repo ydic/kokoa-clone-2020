@@ -1,3 +1,217 @@
 .chat-screen {
+  position: relative;
+
   background-color: #abc1d1;
+  height: 1000vh;
+}
+
+.main-chat {
+  /* main-chat 클래스 코드의 내용이 status-bar 클래스와 alt-header 클래스의 화면 상단 배치로 인해 가려지는 현상을 margin-top 속성을 부여해 무효화  */
+  margin-top: 120px;
+
+  /* 질문: chat__timestamp 클래스의 텍스트와 background-color(배경색이 좌우로 길게 색칠된 모양) 속성을 중앙정렬 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-screen .alt-header {
+  /* 질문: 이 방법이 최선인지? 스크롤시 비치지 않도록 배경색을 매번 수정해서 코딩해야 하는지? own__alt-header 클래스를 status-bar 클래스의 아래 영역으로 화면상 위치 고정 및 배경색 지정으로 body {height: 1000vh} 테스트시 불투명하게 만듦*/
+  background-color: #abc1d1;
+
+  /* 크롬 브라우저로 inspect 했을 때, status-bar 클래스 전체 높이가 26px 이므로 status-bar 덮거나 가리지 않도록 top: 26px 위치로 설정 가능 */
+  /* 그러나 alt-header 클래스에 top: 26px 설정하는 대신 z-index: 1 부여 / status-bar 클래스에 z-index: 2 부여하여 덮거나 가리는 현상 무효화   */
+  /* 질문: own__alt-header 클래스에서 padding-top: 40px 설정하는 것과 마찬가지? / z-index 속성으로 layer 문제는 해결해도 화면배치 위치 문제는 padding-top 또는 top 속성으로 해결하는 것이 최선인지? */
+  /* top: 26px; */
+
+  /* 질문: #6.29__top: 10px 설정만으로 padding-top: 40px, top:0 속성 적용하는 조합 없이 화면배치 하는 방식이 어떻게 가능한 것인지? */
+  top: 0;
+
+  position: fixed;
+
+  /* alt-header 클래스에 position: fixed 지정하면 3개의 alt-header__column 내용 간의 구분공간 확보를 위해 기적용한 margin-right: auto, margin-left: auto 속성을 상실하는 현상을 width:100% 설정으로 해결함 */
+  width: 100%;
+
+  /* box-sizing 속성__CSS에게 "내가 padding을 줘도 신경쓰지 마. 내 box 사이즈를 늘리지 말아줘.(padding 공간으로 box 사이즈가 작아져도 상관없다" */
+  box-sizing: border-box;
+}
+
+.chat__timestamp {
+  /* 질문: 상위 태그인 main-chat 클래스에서 display, flex-direction, align-items 속성 설정으로 텍스트와 background-color(배경색이 좌우로 길게 색칠된 모양) 속성을 중앙정렬 */
+  padding: 15px;
+  background-color: #92a4b2;
+  color: white;
+  border-radius: 25px;
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+
+  /* 상대방 message-row, 본인 messge-row 간의 내용 구분용 간격을 margin-bottom 속성으로 부여함 */
+  margin-bottom: 25px;
+}
+
+.message-row img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  margin-right: 10px;
+}
+
+.message__author {
+  /* span 태그의 속성을 display: block 으로 설정하여 margin-bottom 속성 유효화 */
+  display: block;
+  margin-bottom: 6px;
+}
+
+.message__author,
+.message__time {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.message__info {
+  /* 상위 태그인 message__info 클래스에서 display:flex / align-items: flex-end 설정을 통해 하위 태그인 message__time 클래스가 수쳥축으로 하단부 정렬되도록 설정함 */
+  display: flex;
+  align-items: flex-end;
+}
+
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+
+/* flex 자식 속성에만 한하여 적용되는 기능인 order 우선순위를 지정해 flex 자식 속성의 화면배치 순서를 바꿀 수 있음 */
+/* 부모 태그인 messge__info 클래스가 display: flex 이므로 자식 태그에 order 우선순위 지정 가능 */
+/* 자식 태그인 message__bubble 클래스와 message__time 클래스에 order 우선순위 정하지 않는 대신, 부모 태그인 message__info 클래스에 flex-direction: row-reverse 속성 적용해도 동일한 결과 나타남 */
+/* .message-row--own .message__bubble {
+    order: 1;
+  }
+  
+  
+  .message-row--own .message__time {
+    order: 0;
+  } */
+
+.message__bubble {
+  background-color: white;
+  padding: 13px;
+
+  font-size: 18px;
+
+  border-radius: 15px;
+
+  /* meesage__bubble 클래스의 좌상단 모서리는 직각 모양으로 설정 */
+  border-top-left-radius: 0px;
+
+  margin-right: 5px;
+}
+
+/* message-row 클래스의 CSS 속성을 기반으로 message-row--own 클래스의 CSS 속성을 첨가함 */
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+
+  border-radius: 15px;
+  border-top-right-radius: 0px;
+
+  /* message__bubble 클래스의 margin-right 속성 무효화, margin-left 속성 유효화 */
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+.reply {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  background-color: white;
+
+  /* padding 지정값으로 인해 width 속성이 화면 밖으로 밀려나는 현상을 box-sizing: border-box 속성으로 무효화  */
+  padding: 5px 25px;
+  box-sizing: border-box;
+}
+
+/* 하위 코드인 input 태그가 width 속성이 유효하려면 상위 태그인 reply__column 클래스가 width 속성을 가져야 함 */
+.reply .reply__column:first-child {
+  width: 8%;
+
+  /* own__해당 클래스 내 i 태그가 화면배치상 왼쪽으로 치우쳐 있여 가로축으로 중앙정렬 적용함 */
+  /* display: flex;
+  justify-content: center; */
+}
+
+/* 하위 코드인 input 태그가 width 속성이 유효하려면 상위 태그인 reply__column 클래스가 width 속성을 가져야 함 */
+.reply .reply__column:last-child {
+  width: 92%;
+
+  /* 하위 코드인 i 태그와 button 태그를 position: absolute 속성으로 설정하기 위해 부모 태그를 position: relative 속성으로 설정함 */
+  position: relative;
+}
+
+.reply i {
+  opacity: 0.5;
+}
+
+.reply__column button i {
+  opacity: 1;
+}
+
+.reply input {
+  /* 질문: #6.33__input 태그에 height 속성(1차 코드)에서 padding 속성(2차 코드)으로 변경하면, absolute 속성의 위치(i 태그, button 태그)와 input 태그의 width 속성의 화면배치가 흐트러짐 */
+  height: 30px;
+  /* padding: 12px; */
+
+  /* input 태그가 width 속성이 유효하려면 상위 태그인 reply__column 클래스가 width 속성을 가져야 함 */
+  width: 100%;
+
+  border: var(--main-border);
+  border-radius: 25px;
+}
+
+/* input 태그의 placeholder 속성이 화면배치상 왼쪽으로 치우쳐 있어 padding-left 속성으로 여백 확보함 */
+.reply__column input::placeholder {
+  padding-left: 14px;
+}
+/* direct children 값만을 가리키는 CSS 문법은 > (right angle bracket) 기호임. " .reply__column:last-child i " 형태로 지칭시 button 태그에 포함된 i 태그의 아이콘 모양이 훼손되는 현상을 무효화 */
+.reply__column:last-child > i {
+  position: absolute;
+  right: 40px;
+
+  /* position: absolute 상태인 i 태그와 button 태그이므로 수작업으로 px값 조정하여 적당한 화면배치 지점 찾아야 함 */
+  top: 9px;
+}
+
+.reply__column:last-child button {
+  position: absolute;
+  right: -5px;
+
+  /* position: absolute 상태인 i 태그와 button 태그이므로 수작업으로 px값 조정하여 적당한 화면배치 지점 찾아야 함 */
+  top: 0px;
+}
+
+.reply__column button {
+  background-color: var(--yellow);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+  /* button 속성의 테두리가 순간적으로 굵게 표시되는 현상을 무효화 */
+  outline: none;
 }

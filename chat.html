@@ -25,13 +25,13 @@
 
     <header class="alt-header">
       <div class="alt-header__column">
-        <a href="more.html">
+        <a href="chats.html">
           <i class="fas fa-angle-left fa-3x"></i>
         </a>
       </div>
 
       <div class="alt-header__column">
-        <h1 class="alt-header__title">Linh</h1>
+        <h1 class="alt-header__title">Huyen</h1>
       </div>
       <div class="alt-header__column">
         <span><i class="fas fa-search fa-lg"></i></span>
@@ -39,8 +39,45 @@
       </div>
     </header>
 
-    <!-- chat.html main 태그 클래스명: main-screen(수평으로 padding 적용) -->
-    <main class="main-screen"></main>
+    <!-- chat.html main 태그 클래스명(2가지 적용): main-screen(수평으로 padding 적용), main-chat -->
+    <main class="main-screen main-chat">
+      <div class="chat__timestamp">Tuesday, June 30, 2020</div>
+
+      <div class="message-row">
+        <img src="" alt="" />
+        <div class="message-row__content">
+          <span class="message__author">Huyen</span>
+          <div class="message__info">
+            <span class="message__bubble">Hi!</span>
+            <span class="message__time">21:27</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- message-row 클래스의 CSS 속성을 기반으로 message-row--own 클래스의 CSS 속성을 첨가함 -->
+      <div class="message-row message-row--own">
+        <!-- <img src="" alt="" /> -->
+        <div class="message-row__content">
+          <!-- <span class="message__author"></span> -->
+          <div class="message__info">
+            <!-- flex 자식 속성에만 한하여 적용되는 기능인 order 우선순위를 지정해 flex 자식 속성의 화면배치 순서를 바꿀 수 있음 -->
+            <span class="message__bubble">What's up?</span>
+            <span class="message__time">21:27</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <form class="reply" action="">
+      <div class="reply__column">
+        <i class="far fa-plus-square fa-lg"></i>
+      </div>
+      <div class="reply__column">
+        <input type="text" placeholder="Write a message..." />
+        <i class="far fa-smile-wink fa-lg"></i>
+        <button><i class="fas fa-arrow-up"></i></button>
+      </div>
+    </form>
 
     <!-- fontawesome Kit's Code CDN-->
     <script
