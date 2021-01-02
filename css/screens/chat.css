@@ -2,15 +2,30 @@
   position: relative;
 
   background-color: #abc1d1;
-  height: 1000vh;
+  height: 500vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .main-chat {
+  display: flex;
+
+  animation: fadeIn 0.8s linear;
+
   /* main-chat 클래스 코드의 내용이 status-bar 클래스와 alt-header 클래스의 화면 상단 배치로 인해 가려지는 현상을 margin-top 속성을 부여해 무효화  */
   margin-top: 120px;
 
   /* 질문: chat__timestamp 클래스의 텍스트와 background-color(배경색이 좌우로 길게 색칠된 모양) 속성을 중앙정렬 */
-  display: flex;
+
   flex-direction: column;
   align-items: center;
 }
@@ -142,15 +157,17 @@
   /* padding 지정값으로 인해 width 속성이 화면 밖으로 밀려나는 현상을 box-sizing: border-box 속성으로 무효화  */
   padding: 5px 25px;
   box-sizing: border-box;
+
+  /* reply:font-within 속성에서 지정한 CSS속성 동작를 위한 transition 속성 활성화 */
+  transition: all 0.3s ease-in-out;
 }
 
 /* 하위 코드인 input 태그가 width 속성이 유효하려면 상위 태그인 reply__column 클래스가 width 속성을 가져야 함 */
 .reply .reply__column:first-child {
   width: 8%;
-
   /* own__해당 클래스 내 i 태그가 화면배치상 왼쪽으로 치우쳐 있여 가로축으로 중앙정렬 적용함 */
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
 }
 
 /* 하위 코드인 input 태그가 width 속성이 유효하려면 상위 태그인 reply__column 클래스가 width 속성을 가져야 함 */
@@ -179,7 +196,48 @@
 
   border: var(--main-border);
   border-radius: 25px;
+
+  /* #6.38 질문: 해당 CSS 속성은 .reply {box-sizing: border-box;} 속성 설정한 것과 다른 기능하는지? 강의화면 속 중복코드인지?  */
+  /* box-sizing: border-box; */
+
+  /* 오페시티제로*** 라고 주석 표기한 속성값에 대한 transition 효과를 활성화 */
+  transition: all 0.3s ease-in-out;
 }
+
+/* ------------------------------------------------------------------------------ */
+/* ---------  [내용 시작] :focus-within 속성에 대한 transition, transform -------- */
+/* .reply {}와  .reply input {} 속성에서 transition 속성 활성화를 전제로 함  */
+
+/* focus-within 속성은 내부적으로 focus된 element가 있다면 작성한 코드 속성을 실행함 */
+/* #6.38 질문__display: none / opacity: 0 / visibility: hidden 속성의 차이와 어울리는 상황은? */
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile-wink,
+.reply:focus-within button {
+  /* 오페시티제로*** */
+  opacity: 0;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-smile-wink,
+.reply button {
+  /* 오페시티제로*** 라고 주석 표시했던 그 속성값을 기반으로 transition 동작함 */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within {
+  transform: translateY(50px);
+}
+
+.reply:focus-within input {
+  /* input 태그가 화면너비의 n/100 비율로 나타나도록 함 / 질문: 브라우저 가로길이 늘일수록 화면상 input 태그 비율 흐트러짐  */
+  width: 92vw;
+
+  /* input 태그가 왼쪽으로 늘어나도록 변형됨 / 질문: 브라우저 가로길이 늘일수록 화면상 input 태그 비율 흐트러짐  */
+  transform: translateX(-9%) translateY(-50px);
+}
+
+/* ---------  [내용 끝] :focus-within 속성에 대한 transition, transform -------- */
+/* ------------------------------------------------------------------------------ */
 
 /* input 태그의 placeholder 속성이 화면배치상 왼쪽으로 치우쳐 있어 padding-left 속성으로 여백 확보함 */
 .reply__column input::placeholder {

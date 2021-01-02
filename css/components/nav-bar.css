@@ -23,6 +23,41 @@
   justify-content: space-between;
 }
 
+@keyframes appearBtnAnimation {
+  from {
+    /* transform: translateY(50px); */
+
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.nav-bar__btn {
+  /* 4개의 nav-bar__btn 클래스의 animation 속성의 초기값을 투명 상태, 수직축 아래 지점으로 설정함 */
+  /* #6.36 질문: transform 속성은 @keyframes 속성 안과 밖에 코딩할 때 수행하는 기능에 차이가 있는지? */
+  transform: translateY(50px);
+  opacity: 0;
+
+  /* 애니메이션의 마지막 keyframe을 기억하도록 animation 속성 설정에 forwards 키워드를 추가함 */
+  animation: appearBtnAnimation 0.4s ease-in-out forwards;
+}
+
+.nav-bar__btn:nth-child(2) {
+  /* @keyframes 속성과 transform 속성(@keyframes 속성 안팎에서 기능)을 지정한 시간 뒤에 시작함 */
+  animation-delay: 0.25s;
+}
+.nav-bar__btn:nth-child(3) {
+  /* @keyframes 속성과 transform 속성(@keyframes 속성 안팎에서 기능)을 지정한 시간 뒤에 시작함 */
+  animation-delay: 0.5s;
+}
+.nav-bar__btn:last-child {
+  /* @keyframes 속성과 transform 속성(@keyframes 속성 안팎에서 기능)을 지정한 시간 뒤에 시작함 */
+  animation-delay: 0.75s;
+}
+
 .nav-bar__link {
   color: #2e363e;
 
@@ -30,7 +65,25 @@
   position: relative;
 }
 
+@keyframes notificationAnimation {
+  /* @keyframes 속성 코딩 방법에는 from {} to {} 형태와 0% 50% 100% 형태가 있음 */
+  0% {
+    transform: none;
+  }
+  50% {
+    /* translateY() 속성으로 수직축 위(음수), 아래(양수) 방향으로 이동 */
+    /* rotateY() 속성으로 수직축 기준으로 회전 */
+    transform: translateY(-5px) rotateY(360deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
 .nav-bar__notification {
+  /* animation 속성이 무한반복 하도록 infinite 키워드 추가 */
+  animation: notificationAnimation 2s ease-in-out infinite;
+
   /* badge.css 코드의 badge 클래스 CSS 속성 기반에 position:absolute 속성 부여 */
 
   /* unread notification 갯수 표시하는 숫자가 메뉴/탭 아이콘보다 우선하는 레이어 */

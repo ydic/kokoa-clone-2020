@@ -46,6 +46,7 @@
 (splash-screen 클래스를 @keyframes 코드에서 opacity:0, visibility: hidden 속성으로 설정하더라도 여전히 height: 100vh, width: 100vw 상태로 html에 존재함)
 뭔가를 숨기거나 html을 제거하려면 JavaScript 코드가 필요함(브라우저가 element를 무시하도록 설정해주는 뇌로써 기능함)
 */
+/* @keyframes 속성 코딩 방법에는 from {} to {} 형태와 0% 50% 100% 형태가 있음 */
 @keyframes hideSplashScreen {
   from {
     opacity: 1;
