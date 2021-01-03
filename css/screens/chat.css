@@ -205,20 +205,21 @@
 }
 
 /* ------------------------------------------------------------------------------ */
-/* ---------  [내용 시작] :focus-within 속성에 대한 transition, transform -------- */
+/* ---------  [내용 시작] :focus-within 속성(state selector)에 대한 transition, transform -------- */
 /* .reply {}와  .reply input {} 속성에서 transition 속성 활성화를 전제로 함  */
 
 /* focus-within 속성은 내부적으로 focus된 element가 있다면 작성한 코드 속성을 실행함 */
 /* #6.38 질문__display: none / opacity: 0 / visibility: hidden 속성의 차이와 어울리는 상황은? */
 .reply:focus-within .reply__column:first-child,
-.reply:focus-within .fa-smile-wink,
+.reply:focus-within .reply__emoticon,
 .reply:focus-within button {
   /* 오페시티제로*** */
+  /* form 태그에 있는 어떤 것에 focus가 되면 지정한 셀렉터를 사라지게 함 */
   opacity: 0;
 }
 
 .reply .reply__column:first-child,
-.reply .fa-smile-wink,
+.reply .reply__emoticon,
 .reply button {
   /* 오페시티제로*** 라고 주석 표시했던 그 속성값을 기반으로 transition 동작함 */
   transition: opacity 0.3s ease-in-out;
@@ -227,12 +228,13 @@
 .reply:focus-within {
   transform: translateY(50px);
 }
-
-.reply:focus-within input {
-  /* input 태그가 화면너비의 n/100 비율로 나타나도록 함 / 질문: 브라우저 가로길이 늘일수록 화면상 input 태그 비율 흐트러짐  */
+/* 질문: :focus 속성과 :focus-within 속성의 차이? */
+/* input:focus 라고 셀렉터를 지정하면, 적용범위 한정되지 않고 모든 input 태그에 적용되므로 셀렉터 범위를 한정하도록 유의요 */
+.reply input:focus {
+  /* input 태그가 화면너비의 n/100 비율로 나타나도록 함 / #6.40__질문: 브라우저 가로길이 늘일수록 화면상 input 태그 비율(%) 흐트러짐  */
   width: 92vw;
 
-  /* input 태그가 왼쪽으로 늘어나도록 변형됨 / 질문: 브라우저 가로길이 늘일수록 화면상 input 태그 비율 흐트러짐  */
+  /* input 태그가 왼쪽으로 늘어나도록 변형됨 / #6.40__질문: 브라우저 가로길이 늘일수록 화면상 input 태그 비율(%) 흐트러짐  */
   transform: translateX(-9%) translateY(-50px);
 }
 

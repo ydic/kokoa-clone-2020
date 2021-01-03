@@ -74,11 +74,16 @@
       </div>
       <div class="reply__column">
         <input type="text" placeholder="Write a message..." />
-        <i class="far fa-smile-wink fa-lg"></i>
+        <!-- i 태그에 CSS 속성 설정 관리를 위해 클래스명(reply__emoticon) 부여 -->
+        <i class="far fa-smile-wink fa-lg reply__emoticon"></i>
         <button><i class="fas fa-arrow-up"></i></button>
       </div>
     </form>
 
+    <!-- media query 적용 -->
+    <div class="no-mobile">
+      <span>Your Screen is too big.</span>
+    </div>
     <!-- fontawesome Kit's Code CDN-->
     <script
       src="https://kit.fontawesome.com/8d39c9ab43.js"
