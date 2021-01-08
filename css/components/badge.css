@@ -1,3 +1,9 @@
+/* 
+collapsing margin
+경계(border)가 닿아서 위, 아래 수직 방향으로 margin이 같아지는 현상
+padding(경계로부터 안쪽의 공간) 속성으로 해결
+ */
+
 /* nav-bar.css 코드의 nav-bar__notification 클래스 속성과 유사하나 position:absolute 속성은 무효화*/
 .badge {
   background-color: tomato;

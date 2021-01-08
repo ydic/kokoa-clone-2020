@@ -1,3 +1,9 @@
+/* 
+collapsing margin
+경계(border)가 닿아서 위, 아래 수직 방향으로 margin이 같아지는 현상
+padding(경계로부터 안쪽의 공간) 속성으로 해결
+ */
+
 /* 4개의 find-icons__icon 클래스를 한 줄의 수평축으로 화면 배치 */
 /*more-suggestions 클래스의 CSS 속성에서는 icon-row 클래스(justify-content: space-between 속성) 적용 무효화 */
 .icon-row {
