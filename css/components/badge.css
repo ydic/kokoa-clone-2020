@@ -13,6 +13,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   border-radius: 50%;
 
   /* unread notification 갯수 표시하는 숫자의 위치 */
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: center;
   align-items: center;

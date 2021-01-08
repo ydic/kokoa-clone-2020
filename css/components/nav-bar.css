@@ -25,6 +25,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   border-top: 1px solid rgba(121, 121, 121, 0.2);
 }
 .nav-bar__list {
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: space-between;
 }
@@ -112,6 +113,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   background-color: tomato;
   border-radius: 50%;
 
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
 
   position: absolute;

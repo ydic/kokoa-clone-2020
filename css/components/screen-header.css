@@ -5,6 +5,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
  */
 
 .screen-header {
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -8,6 +8,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   /* z-index 속성은 layer 개념이며, absolute position 또는 fixed postion에 대해서 설정할 수 있음 */
   z-index: 1;
 
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
 
   /* 질문: alt-header:first-child 부분에 margin-right: auto / alt-header:last-child 부분에 margin-left: auto (alt-header 부분에서 justify-content: space-between 적용하지 않음) */
@@ -48,6 +49,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   margin-left: auto;
 
   /* (s2/3)margin-right:auto, margin-left:auto 지정만으로는 해결되지 않는 alt-header 중앙정렬 문제 해결법 */
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: flex-end;
 }

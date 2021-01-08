@@ -5,6 +5,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
  */
 
 .status-bar {
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
 
   /* (p1/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
@@ -41,12 +42,14 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 
 .status-bar__column:nth-child(2) {
   /* (p3/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: center;
 }
 
 .status-bar__column:last-child {
   /* (p4/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: flex-end;
   align-items: center;

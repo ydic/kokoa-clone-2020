@@ -9,6 +9,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   justify-content: space-between;
 
   /* own__ .user-componenet .user-component__column:first-child {display: flex;} 부분과 코드 중복되나, 본 형태로 만들지 않으면 2개의 user-component__column 클래스가 두 줄로 배치되는 현상 발생*/
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
 
   /* 숙제(채팅방 목록이 2개 이상일 때 각 항목(채팅방) 사이에 margin-bottom 속성 부여) #6.21__코드 대조 검사 확인요 */
@@ -20,6 +21,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 .user-component 
   /* user-component__avatar 클래스와 user-component__text 클래스가 옆으로 정렬됨 */
 .user-component__column:first-child {
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   align-items: center;
 }
@@ -27,6 +29,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 .user-component__column:last-child {
   color: rgba(0, 0, 0, 0.5);
 
+  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
 
   flex-direction: column;
