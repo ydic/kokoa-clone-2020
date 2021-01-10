@@ -57,18 +57,11 @@
   }
 }
 
-.splash-screen__image-main {
-  width: 390px;
-  height: 380px;
-}
-
 .splash-screen {
-  animation: hideSplashScreen 0.7s ease-in-out forwards;
-  animation-delay: 1.3s;
+  animation: hideSplashScreen 1s ease-in-out forwards;
+  animation-delay: 0.9s;
 
-  /* own__img 태그 추가로 인한 화면내 배경색 조정용도 */
-  background-color: black;
-  /* background-color: var(--yellow); */
+  background-color: var(--yellow);
 
   /* body 태그가 splash-screen 클래스의 부모 태그이도록 하기 위해 부모 태그(상위 태그)로 splash-screen을 감싸지도 부모 태그(상위 태그)를 position: relative 설정하지도 않음 */
   position: absolute;
@@ -90,18 +83,6 @@
   justify-content: center;
   align-items: center;
 
-  /* own__img 태그 추가로 인한 i 태그와의 화면내 위치 배치 조정용도 */
-  flex-direction: column;
-
   /* fontawesome 아이콘은 텍스트 형식이므로 font-size 속성으로 아이콘 크기 설정 */
-  color: gray;
-  font-size: 25px;
-  /* font-size: 132px; */
-
-  font-weight: 600;
-}
-
-.splash-screen__image-logo img {
-  width: 24px;
-  height: 20px;
+  font-size: 132px;
 }
