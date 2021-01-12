@@ -72,6 +72,10 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   position: relative;
 }
 
+/*
+transform 기능은 다른 box element, 이미지에 영향을 끼치지 않음.
+transform 기능은 margin padding 속성이 적용되지 않음.
+transform 기능은 일종의 3D transformation이기 때문. */
 @keyframes notificationAnimation {
   /* @keyframes 속성 코딩 방법에는 from {} to {} 형태와 0% 50% 100% 형태가 있음 */
   0% {
