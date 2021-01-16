@@ -1,40 +1,20 @@
-/* 
-collapsing margin
-경계(border)가 닿아서 위, 아래 수직 방향으로 margin이 같아지는 현상
-padding(경계로부터 안쪽의 공간) 속성으로 해결
- */
-
 .nav-bar {
-  /* 메뉴/탭 아이콘 (step1/4) 화면 최하단부로 위치 고정 */
   position: fixed;
   bottom: 0;
-
-  /* 메뉴/탭 아이콘 (step2/4) 너비 속성 부여  */
   width: 100%;
-
-  /* 메뉴/탭 아이콘 (step3/4) ul태그의 justify-content 속성 설정만으로는 배치에 한계  */
   padding: 20px 50px;
-
-  /* 메뉴/탭 아이콘 (step4/4) padding 지정한 공간은 사용불가, CSS는 해당 padding 공간만큼 추가로 크기를 보태어 표시함 */
-  /* box-sizing 속성__CSS에게 "내가 padding을 줘도 신경쓰지 마. 내 box 사이즈를 늘리지 말아줘.(padding 공간으로 인해 box 사이즈가 작아져도 상관없다)" */
   box-sizing: border-box;
-
-  /* background-color: #f9f9fa; */
   background-color: var(--dark-theme-nav-bar);
-
-  /* nav-bar 시각적 구분용 상단부 실선 */
   border-top: 1px solid rgba(121, 121, 121, 0.2);
 }
+
 .nav-bar__list {
-  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: space-between;
 }
 
 @keyframes appearBtnAnimation {
   from {
-    /* transform: translateY(50px); */
-
     opacity: 0;
   }
   to {
@@ -44,48 +24,32 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 }
 
 .nav-bar__btn {
-  /* 4개의 nav-bar__btn 클래스의 animation 속성의 초기값을 투명 상태, 수직축 아래 지점으로 설정함 */
-  /* #6.36 질문: transform 속성은 @keyframes 속성 안과 밖에 코딩할 때 수행하는 기능에 차이가 있는지? */
   transform: translateY(50px);
   opacity: 0;
-
-  /* 애니메이션의 마지막 keyframe을 기억하도록 animation 속성 설정에 forwards 키워드를 추가함 */
   animation: appearBtnAnimation 0.4s ease-in-out forwards;
 }
 
 .nav-bar__btn:nth-child(2) {
-  /* @keyframes 속성과 transform 속성(@keyframes 속성 안팎에서 기능)을 지정한 시간 뒤에 시작함 */
   animation-delay: 0.25s;
 }
+
 .nav-bar__btn:nth-child(3) {
-  /* @keyframes 속성과 transform 속성(@keyframes 속성 안팎에서 기능)을 지정한 시간 뒤에 시작함 */
   animation-delay: 0.5s;
 }
 .nav-bar__btn:last-child {
-  /* @keyframes 속성과 transform 속성(@keyframes 속성 안팎에서 기능)을 지정한 시간 뒤에 시작함 */
   animation-delay: 0.75s;
 }
 
 .nav-bar__link {
-  /* color: #2e363e; */
   color: var(--dark-theme-text-bright);
-
-  /* nav-bar__notification 클래스의 position: absolute는 가장 가까운 relative를 가진 부모(anchor 태그인 nav-bar__link 클래스) 기준으로 움직임 */
   position: relative;
 }
 
-/*
-transform 기능은 다른 box element, 이미지에 영향을 끼치지 않음.
-transform 기능은 margin padding 속성이 적용되지 않음.
-transform 기능은 일종의 3D transformation이기 때문. */
 @keyframes notificationAnimation {
-  /* @keyframes 속성 코딩 방법에는 from {} to {} 형태와 0% 50% 100% 형태가 있음 */
   0% {
     transform: none;
   }
   50% {
-    /* translateY() 속성으로 수직축 위(음수), 아래(양수) 방향으로 이동 */
-    /* rotateY() 속성으로 수직축 기준으로 회전 */
     transform: translateY(-5px) rotateY(360deg);
   }
   100% {
@@ -94,46 +58,26 @@ transform 기능은 일종의 3D transformation이기 때문. */
 }
 
 .nav-bar__notification {
-  /* animation 속성이 무한반복 하도록 infinite 키워드 추가 */
   animation: notificationAnimation 2s ease-in-out infinite;
-
-  /* badge.css 코드의 badge 클래스 CSS 속성 기반에 position:absolute 속성 부여 */
-
-  /* unread notification 갯수 표시하는 숫자가 메뉴/탭 아이콘보다 우선하는 레이어 */
-  /* position: absolute는 가장 가까운 relative를 가진 부모(anchor 태그인 nav-bar__link 클래스) 기준으로 움직임 */
-  /* position 속성을 이용하면 요소를 겹치게 놓을 수 있습니다.
-  이때 요소들의 수직 위치를 z-index 속성으로 정합니다.
-  값은 정수이며, 숫자가 클 수록 위로 올라오고, 숫자가 작을 수록 아래로 내려갑니다. */
-
-  /* relative가 static인 상태를 기준으로 주어진 픽셀만큼 움직였다면,
-  absolute는 position: static 속성을 가지고 있지 않은 부모를 기준으로 움직입니다.
-  만약 부모 중에 포지션이 relative, absolute, fixed인 태그가 없다면
-  가장 위의 태그(body)가 기준이 됩니다. */
   position: absolute;
   left: 15px;
   bottom: 15px;
 }
 
-/* nav-bar__notification 클래스의 CSS 속성과 동일한 원리 적용*/
 .nav-bar__notification-dot {
   background-color: tomato;
   border-radius: 50%;
-
-  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
-
   position: absolute;
 }
 
 .nav-bar__notification-dot--ellipsis {
   width: 10px;
   height: 10px;
-
   left: 32px;
   bottom: 30px;
 }
 
-/* 숙제 #6.21__코드 대조 검사 확인요 */
 .nav-bar__notification-dot--cog {
   width: 8px;
   height: 8px;
@@ -142,7 +86,6 @@ transform 기능은 일종의 3D transformation이기 때문. */
   bottom: 22px;
 }
 
-/* 숙제 #6.21__코드 대조 검사 확인요 */
 .nav-bar__notification-dot--father_relative {
   position: relative;
 }

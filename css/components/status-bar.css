@@ -1,39 +1,16 @@
-/* 
-collapsing margin
-경계(border)가 닿아서 위, 아래 수직 방향으로 margin이 같아지는 현상
-padding(경계로부터 안쪽의 공간) 속성으로 해결
- */
-
 .status-bar {
-  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
-
-  /* (p1/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
   justify-content: center;
-
-  /* 상태표시줄 (step1/4) 화면 최상단부로 위치 고정 및 배경색 지정으로 body {height: 1000vh} 테스트시 불투명하게 만듦*/
   position: fixed;
-
-  /* z-index 속성은 layer 개념이며, absolute position 또는 fixed postion에 대해서 설정할 수 있음 */
   z-index: 2;
-
   top: 0;
-  /* background-color: #ffffff; */
   color: var(--dark-theme-status-bar);
-
-  /* 상태표시줄 (step2/4) 너비 속성 부여 */
   width: 100%;
-
-  /* 상태표시줄 (setp3/4) justify-content, margin 속성만으로는 배치에 한계 */
   padding: 5px 3px;
-
-  /* 상태표시줄 (setp4/4) padding 지정한 공간은 사용불가, CSS는 해당 padding 공간만큼 추가로 크기를 보태어 표시함 */
-  /* box-sizing 속성__CSS에게 "내가 padding을 줘도 신경쓰지 마. 내 box 사이즈를 늘리지 말아줘.(padding 공간으로 box 사이즈가 작아져도 상관없다" */
   box-sizing: border-box;
 }
 
 .status-bar__column {
-  /* (p2/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
   width: 33%;
 }
 
@@ -42,15 +19,11 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 }
 
 .status-bar__column:nth-child(2) {
-  /* (p3/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
-  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: center;
 }
 
 .status-bar__column:last-child {
-  /* (p4/4) justify-content 대신 container 하나를 중심에 놓는 CSS Hack */
-  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: flex-end;
   align-items: center;

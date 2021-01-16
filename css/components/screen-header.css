@@ -1,20 +1,9 @@
-/* 
-collapsing margin
-경계(border)가 닿아서 위, 아래 수직 방향으로 margin이 같아지는 현상
-padding(경계로부터 안쪽의 공간) 속성으로 해결
- */
-
 .screen-header {
   color: var(--dark-theme-text-bright);
-
-  /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: var(--horizontal-space);
-
-  /* 제목(screen-header 클래스) 영역과 세부내용 영역(friends-screen, main-screen, etc) 사이에 margin-bttom 속성 부여 */
   margin-bottom: 15px;
 }
 
@@ -27,22 +16,15 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   margin-left: 25px;
 }
 
-/* 
-transition 기능은 state([예시] a:hover)가 없는 요소에 작성하며, 변화시키려는 요소([예시] background-color)는 state가 있는 부분에 명시한 후 state가 없는 부분에서 transition 기능으로 호출할 때도 명시해야 함.
-@keyframes 속성의 transform 기능은 state([예시] a:hover)가 있는 요소의 animation 속성에서 호출함
-*/
 @keyframes rotateCog {
   from {
     transform: none;
   }
   to {
-    /* transform 속성의 rotateZ 효과는 Z축으로 회전함  */
     transform: rotateZ(360deg);
   }
 }
 
 .screen-header__icons .fa-cog:hover {
-  /* animation 속성의 ease-in-out 효과: 느리게 시작되고 애니메이션 중간에서 가장 빨라진 다음 천천히 완료됩니다. */
-  /* animation 속성의 linear 효과: 여유를 사용하지 않습니다. */
   animation: rotateCog 1s linear infinite;
 }

@@ -22,14 +22,10 @@
       </div>
     </div>
 
-    <!-- div는 non-semantic 태그, header / main / footer는 div와 동일한 기능을 하며 semantic 태그 -->
-    <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(screen-header.css) -->
     <header class="screen-header">
       <h1 class="screen-header__title">Find</h1>
       <div class="screen-header__icons">
         <span><i class="fas fa-search fa-lg"></i></span>
-
-        <!-- 과제 #6.21__코드 대조 검사 확인요 -->
         <a class="nav-bar__notification-dot--father_relative" href="#">
           <span><i class="fas fa-cog fa-lg"></i></span>
           <span
@@ -39,11 +35,8 @@
       </div>
     </header>
 
-    <!-- find.html main 태그 클래스명: main-screen(수평으로 padding 적용) -->
     <main class="main-screen">
-      <!-- 질문: div 태그로 만든 이유? -->
       <div class="icon-row">
-        <!-- 질문: div 태그로 만든 이유? -->
         <div class="icon-row__icon">
           <i class="fas fa-qrcode"></i
           ><span class="icon-row__icon-text">QR Code</span>
@@ -76,7 +69,6 @@
         <div class="open-post">
           <div class="open-post__column">
             <h5 class="open-post__title">#TWICE</h5>
-            <!-- 디자인(보여지는 것) 때문에 대문자가 필요하다면 HTML 코드에서는 소문자로 작성 후 CSS 코드에서 대문자로 변경함 -->
             <h6 class="open-post__hashtags">#twice#once</h6>
             <div class="open-post__members">
               <img src="img/sample_open-post.jpg" alt="" />
@@ -101,26 +93,22 @@
     <nav class="nav-bar">
       <ul class="nav-bar__list">
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="friends.html">
             <i class="far fa-user fa-2x"></i>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="chats.html">
             <i class="far fa-comment fa-2x"></i>
             <span class="nav-bar__notification badge">1</span>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="find.html">
             <i class="fas fa-search fa-2x"></i>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="more.html">
             <i class="fas fa-ellipsis-h fa-2x"></i>
             <span
@@ -131,13 +119,11 @@
       </ul>
     </nav>
 
-    <!-- media query 적용 -->
     <div class="no-mobile">
       <i class="fas fa-exclamation-circle fa-3x"></i>
       <span>Your screen is too big.</span>
     </div>
 
-    <!-- fontawesome Kit's Code CDN-->
     <script
       src="https://kit.fontawesome.com/8d39c9ab43.js"
       crossorigin="anonymous"

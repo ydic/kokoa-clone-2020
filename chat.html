@@ -8,7 +8,6 @@
     <title>Chat - KokoaTalk</title>
   </head>
 
-  <!-- 배경색 적용하기 위해 body 태그에 chat-screen 클래스 부여 -->
   <body class="chat-screen">
     <div class="status-bar">
       <div class="status-bar__column">
@@ -23,7 +22,6 @@
       </div>
     </div>
 
-    <!-- div는 non-semantic 태그, header / main / footer는 div와 동일한 기능을 하며 semantic 태그 -->
     <header class="alt-header">
       <div class="alt-header__column">
         <a href="chats.html">
@@ -40,7 +38,6 @@
       </div>
     </header>
 
-    <!-- chat.html main 태그 클래스명(2가지 적용): main-screen(수평으로 padding 적용), main-chat -->
     <main class="main-screen main-chat">
       <div class="chat__timestamp">Thursday, January 14, 2021</div>
 
@@ -55,14 +52,9 @@
         </div>
       </div>
 
-      <!-- message-row 클래스의 CSS 속성을 기반으로 message-row--own 클래스의 CSS 속성을 첨가함 -->
       <div class="message-row message-row--own">
-        <!-- <img src="" alt="" /> -->
         <div class="message-row__content">
-          <!-- <span class="message__author"></span> -->
           <div class="message__info">
-            <!-- flex 자식 속성에만 한하여 적용되는 기능인 order 우선순위를 지정해 flex 자식 속성의 화면배치 순서를 바꿀 수 있음 -->
-            <!-- 자식 태그인 message__bubble 클래스와 message__time 클래스에 order 우선순위 정하지 않는 대신, 부모 태그인 message__info 클래스에 flex-direction: row-reverse 속성 적용해도 동일한 결과 나타남 -->
             <span class="message__bubble">What's up?</span>
             <span class="message__time">18:41</span>
           </div>
@@ -76,19 +68,16 @@
       </div>
       <div class="reply__column">
         <input type="text" placeholder="Write a message..." />
-        <!-- i 태그에 CSS 속성 설정 관리를 위해 클래스명(reply__emoticon) 부여 -->
         <i class="far fa-smile-wink fa-lg reply__emoticon"></i>
         <button><i class="fas fa-arrow-up"></i></button>
       </div>
     </form>
 
-    <!-- media query 적용 -->
     <div class="no-mobile">
       <i class="fas fa-exclamation-circle fa-3x"></i>
       <span>Your screen is too big.</span>
     </div>
 
-    <!-- fontawesome Kit's Code CDN-->
     <script
       src="https://kit.fontawesome.com/8d39c9ab43.js"
       crossorigin="anonymous"

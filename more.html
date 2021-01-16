@@ -22,15 +22,12 @@
       </div>
     </div>
 
-    <!-- div는 non-semantic 태그, header / main / footer는 div와 동일한 기능을 하며 semantic 태그 -->
-    <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(screen-header.css) -->
     <header class="screen-header">
       <h1 class="screen-header__title">More</h1>
       <div class="screen-header__icons">
         <span><i class="fas fa-search fa-lg"></i></span>
         <span><i class="fas fa-music fa-lg"></i></span>
 
-        <!-- 과제 #6.21__코드 대조 검사 확인요 -->
         <a class="nav-bar__notification-dot--father_relative" href="settings.html">
           <span><i class="fas fa-cog fa-lg"></i></span>
           <span
@@ -40,7 +37,6 @@
       </div>
     </header>
 
-    <!-- more.html main 태그 클래스명: main-screen(수평으로 padding 적용), more-screen(icon-row 클래스 margin-top 적용) -->
     <main class="main-screen more-screen">
       <div class="user-component">
         <div class="user-component__column">
@@ -58,9 +54,7 @@
         </div>
       </div>
 
-      <!-- 질문: div 태그로 만든 이유? -->
       <div class="icon-row">
-        <!-- 질문: div 태그로 만든 이유? -->
         <div class="icon-row__icon">
           <i class="far fa-calendar"></i
           ><span class="icon-row__icon-text">Calender</span>
@@ -79,17 +73,13 @@
         </div>
       </div>
 
-      <!-- more-suggestions 클래스의 CSS 속성에서는 icon-row 클래스(justify-content: space-between 속성) 적용 무효화 -->
       <div class="more-suggestions">
         <h4 class="more-suggestions__title">Suggestions</h4>
-        <!-- 질문: div 태그로 만든 이유? -->
         <div class="more-suggestions__icons">
-          <!-- 질문: div 태그로 만든 이유? -->
           <div class="icon-row__icon more-suggestions__icon">
             <div class="more-suggestions__icon-image">
               <i class="fas fa-quote-right"></i>
             </div>
-            <!-- 한 줄 속성인 span 태그를 br 태그로 두 줄로 변경함(more-suggestions__icon-text 내용이 길어질 수록 아이콘 간 불필요한 여백이 증가하는 현상 무효화) -->
             <span class="more-suggestions__icon-text"
               >Kokoa<br />
               Story</span>
@@ -107,26 +97,22 @@
     <nav class="nav-bar">
       <ul class="nav-bar__list">
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="friends.html">
             <i class="far fa-user fa-2x"></i>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="chats.html">
             <i class="far fa-comment fa-2x"></i>
             <span class="nav-bar__notification badge">1</span>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="find.html">
             <i class="fas fa-search fa-2x"></i>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="more.html">
             <i class="fas fa-ellipsis-h fa-2x"></i>
             <span
@@ -137,13 +123,11 @@
       </ul>
     </nav>
 
-        <!-- media query 적용 -->
         <div class="no-mobile">
           <i class="fas fa-exclamation-circle fa-3x"></i>
           <span>Your screen is too big.</span>
         </div>
         
-    <!-- fontawesome Kit's Code CDN-->
     <script
       src="https://kit.fontawesome.com/8d39c9ab43.js"
       crossorigin="anonymous"
