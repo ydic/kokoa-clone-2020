@@ -63,8 +63,10 @@
 }
 
 .splash-screen__image-main {
-  width: 380px;
-  height: 370px;
+  /* width: 380px;
+  height: 370px; */
+  width: 268px;
+  height: 380px;
   border-radius: 50px;
   filter: brightness(85%);
 }
@@ -72,8 +74,10 @@
 .splash-screen {
   position: relative;
 
+  /* animation: hideSplashScreen 0.7s ease-in-out forwards;
+  animation-delay: 1.4s; */
   animation: hideSplashScreen 0.7s ease-in-out forwards;
-  animation-delay: 1.4s;
+  animation-delay: 2s;
 
   /* own__img 태그 추가로 인한 화면내 배경색 조정용도 */
   background-color: black;
