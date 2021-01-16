@@ -29,9 +29,10 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   height: 100vh;
   width: 100vw;
 
-  color: var(--yellow);
-  background-color: black;
   /* background-color: var(--yellow); */
+  background-color: var(--dark-theme-bg-emphasis);
+  color: var(--yellow);
+
   font-size: 32px;
 }
 

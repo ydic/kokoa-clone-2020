@@ -27,7 +27,8 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 }
 
 .user-component__column:last-child {
-  color: rgba(0, 0, 0, 0.5);
+  /* color: rgba(0, 0, 0, 0.5); */
+  color: var(--dark-theme-text-dark);
 
   /* 본 셀렉터는 flex 속성을 적용하려는 대상의 부모 태그임 */
   display: flex;
@@ -41,7 +42,7 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 
 /* own__span 태그와 i 태그 사이에 margin-right 속성 부여 */
 .user-component__column:last-child span {
-  margin-right: 4px;
+  /* margin-right: -6px; */
 }
 
 .user-component .user-component__avatar {
@@ -70,7 +71,8 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 .user-component__subtitle {
   margin-top: 8px;
   font-size: 17px;
-  color: rgba(0, 0, 0, 0.5);
+  /* color: rgba(0, 0, 0, 0.5); */
+  color: var(--dark-theme-text-dark);
 }
 
 .user-component__subtitle i {

@@ -4,23 +4,25 @@
   border-bottom: var(--main-border);
 
   margin: 40px 0px;
-  padding: 25px 0px;
+  padding: 35px 0px;
 }
 
 .recommended-friends__title {
   font-size: 16px;
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-bright);
 }
 
 .recommended-friends span {
   /* span 태그는 inline 속성이므로 margin 적용하려면 display: block 으로 속성 지정 요망 */
   display: block;
-  margin: 80px 0;
+  margin: 70px 0;
 
   text-align: center;
 
   font-size: 18px;
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-dark);
 }
 
 .open-chat__header {
@@ -31,7 +33,12 @@
 }
 
 .open-chat__header span {
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-dark);
+}
+
+.open-chat__title {
+  color: var(--dark-theme-text-bright);
 }
 
 .open-post {
@@ -47,7 +54,8 @@
 
 .open-post__hashtags {
   text-decoration: uppercase;
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-dark);
 }
 
 .open-post__members {
@@ -64,7 +72,8 @@
 }
 
 .open-post__member-count {
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-dark);
   font-size: 14px;
 }
 
@@ -72,7 +81,8 @@
 .open-post__members .divider {
   width: 1.15px;
   height: 12px;
-  background-color: var(--color-gray-light);
+  /* background-color: var(--color-gray-light); */
+  background-color: var(--dark-theme-text-dark);
   margin: 0px 5px;
 }
 
@@ -98,7 +108,8 @@
   right: 6px;
   font-size: 12px;
 
-  background-color: var(--black);
+  /* background-color: var(--black); */
+  background-color: var(--dark-theme-bg-emphasis);
   color: white;
   padding: 4px 6px;
   border-radius: 20px;
@@ -111,7 +122,7 @@
   font-size: 9px;
 }
 
-.open-post__heart-count:hover i {
+.open-post__heart-count i {
   /* will-change 브라우저에게 뭔가가 바뀔 것이라고 얘기해주며, animation 구현 결과물이 훨씬 더 나아보임 */
   /* 브라우저에게 렌더링 힌트를 주고 element에 실행되길 기대하는 변화를 명시함
   (브라우저에게 어떤 것이 변할 것인지 지정해서 알려주면, 브라우저가 컴퓨터의 그래픽카드를 이용해서 animation을 가속화하여 보여줌) */
@@ -137,6 +148,7 @@
     transform: none;
   }
 }
+
 .open-post__heart-count span {
   margin-left: 4px;
 }

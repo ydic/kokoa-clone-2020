@@ -12,8 +12,18 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
   --horizontal-space: 25px;
 
   /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
-  --main-border: 1px solid rgba(0, 0, 0, 0.2);
+  /* --main-border: 1px solid rgba(0, 0, 0, 0.2); */
+  --main-border: 1px solid rgba(164, 164, 164, 0.4);
 
   --color-gray: rgba(0, 0, 0, 0.4);
   --color-gray-light: rgba(0, 0, 0, 0.2);
+
+  --dark-theme-bg: #2a2b30;
+  --dark-theme-bg-emphasis: #1b1b1b;
+  --dark-theme-bg-chat-send: #222327;
+  --dark-theme-bg-chat-receive: #3d4045;
+  --dark-theme-status-bar: #c8c9cb;
+  --dark-theme-nav-bar: #212226;
+  --dark-theme-text-bright: #feffff;
+  --dark-theme-text-dark: #a4a4a4;
 }

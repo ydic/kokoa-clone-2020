@@ -49,10 +49,14 @@ body {
   /* position:fixed 확인용 코드 */
   /* height: 1000vh; */
 
-  color: var(--black);
+  /* color: var(--black); */
+  color: var(--dark-theme-text-dark);
+  background-color: var(--dark-theme-bg);
 }
 
 .welcome-header {
+  color: var(--dark-theme-text-bright);
+
   margin: 90px 0px;
   text-align: center;
 
@@ -67,12 +71,12 @@ body {
 
 .welcome-header__title {
   margin-bottom: 20px;
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .welcome-header__text {
+  line-height: 130%;
   width: 60%;
-
   /* 텍스트 불투명도 조정 */
   opacity: 0.7;
 }
