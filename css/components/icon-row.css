@@ -22,10 +22,14 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
 
 /* i 태그의 크기를 fontawesome syntax(ex: fa-lg) 대신에 font-size 속성으로 설정 */
 .icon-row__icon i {
+  color: var(--dark-theme-text-bright);
+
   font-size: 30px;
 }
 
 /* icon-row__icon i 태그를 기준으로 margin, padding 지양(i 태그 fontawesome 아이콘마다 높이 상이하기 때문) */
 .icon-row__icon-text {
+  color: var(--dark-theme-text-dark);
+
   margin-top: 18px;
 }

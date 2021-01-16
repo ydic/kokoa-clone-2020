@@ -37,10 +37,13 @@
   border-radius: 10px;
 
   /* fontawesome 아이콘은 텍스트 형식이므로 위치 조정을 위해 display: flex 속성으로 변경함 */
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.more-suggestions__icon-image i {
+  color: var(--dark-theme-bg-emphasis);
 }
 
 /* icon-row__icon-text 클래스의 margin-top 속성값과 다른 수치로 설정  */

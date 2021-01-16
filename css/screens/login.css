@@ -10,11 +10,17 @@
 
   border: none;
   margin-bottom: 20px;
+
+  background-color: var(--dark-theme-text-dark);
+  padding-left: 10px;
+
+  font-weight: 600;
 }
 
 /* Class명이 login-form인 input 태그의 placeholder 속성 */
 .login-form input::placeholder {
-  color: var(--color-gray-light);
+  /* color: var(--color-gray-light); */
+  color: white;
 }
 
 /* type="password"와 type="submit" 사이 공간 확보 by syd */
@@ -25,7 +31,8 @@
 /* :not()__뭔가가 적용되는 것을 원하지 않을 때 */
 .login-form input:not([type="submit"]) {
   /* 입력창 focus 상황 발생 전, 입력창 밑줄 실선 색상 */
-  border-bottom: 1px solid var(--color-gray-light);
+  /* border-bottom: 1px solid var(--color-gray-light); */
+  border-left: 14px solid var(--dark-theme-text-dark);
 
   /* 애니메이션: 입력창 focus 상황에 입력창 밑줄 실선 색상 */
 
@@ -35,12 +42,17 @@
 /* CSS 우선순위 규칙상 trainsition 속성(border-color) 지정한 코드보다 아래에 위치해야 함 */
 .login-form input:focus {
   /* :root 속성__입력창 focus 상황에 입력창 밑줄 실선 색상 */
-  border-color: var(--yellow);
+  border-color: rgba(255, 255, 0, 0.8);
+  color: var(--dark-theme-text-bright);
 }
 
 /* input[type=""] */
 .login-form input[type="submit"] {
-  background-color: var(--yellow);
+  /* background-color: var(--yellow); */
+  /* background-color: var(--dark-theme-bg-emphasis);
+  color: var(--dark-theme-text-dark); */
+  background-color: rgba(125, 125, 0, 1);
+  color: black;
 
   /* 마우스 커서 모양 */
   cursor: pointer;
@@ -49,6 +61,15 @@
   padding: 20px 0px;
 
   border-radius: 5px;
+}
+
+.login-form__btn[type="submit"]:hover {
+  background-color: rgba(255, 255, 0, 0.8);
+  color: black;
+}
+
+.login-form__btn[type="submit"] {
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
 }
 
 .login-form a {

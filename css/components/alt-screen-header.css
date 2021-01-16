@@ -5,6 +5,8 @@ padding(경계로부터 안쪽의 공간) 속성으로 해결
  */
 
 .alt-header {
+  color: var(--dark-theme-text-bright);
+
   /* z-index 속성은 layer 개념이며, absolute position 또는 fixed postion에 대해서 설정할 수 있음 */
   z-index: 1;
 

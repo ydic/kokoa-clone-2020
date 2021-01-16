@@ -1,7 +1,10 @@
 .friends-display-link {
   text-align: center;
   display: block;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  background-color: var(--dark-theme-bg-emphasis);
+  color: var(--dark-theme-text-dark);
+
   padding: 15px 0px;
   font-size: 18px;
   margin-bottom: 10px;
@@ -12,7 +15,8 @@
 
 /* i 태그(italic) 기반의 fontawesome 아이콘의 색상 설정  */
 .friends-display-link i {
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-dark);
 }
 
 .friends-screen {
@@ -36,7 +40,8 @@
   display: flex;
   justify-content: space-between;
 
-  color: var(--color-gray);
+  /* color: var(--color-gray); */
+  color: var(--dark-theme-text-bright);
 }
 
 /* #6.35__CSS 기법으로는 element를 페이지로부터 완전히 없앨 수 없음
@@ -58,13 +63,17 @@
 }
 
 .splash-screen__image-main {
-  width: 390px;
-  height: 380px;
+  width: 380px;
+  height: 370px;
+  border-radius: 50px;
+  filter: brightness(85%);
 }
 
 .splash-screen {
+  position: relative;
+
   animation: hideSplashScreen 0.7s ease-in-out forwards;
-  animation-delay: 1.3s;
+  animation-delay: 1.4s;
 
   /* own__img 태그 추가로 인한 화면내 배경색 조정용도 */
   background-color: black;
@@ -92,16 +101,22 @@
 
   /* own__img 태그 추가로 인한 i 태그와의 화면내 위치 배치 조정용도 */
   flex-direction: column;
+}
 
-  /* fontawesome 아이콘은 텍스트 형식이므로 font-size 속성으로 아이콘 크기 설정 */
-  color: gray;
-  font-size: 25px;
-  /* font-size: 132px; */
+.splash-screen__image-logo {
+  position: absolute;
+  top: 465px;
+}
 
+/* .splash-screen__image-logo span {
+  color: var(--yellow);
+  letter-spacing: 2px;
+
+  font-size: 34px;
   font-weight: 600;
 }
 
 .splash-screen__image-logo img {
   width: 24px;
   height: 20px;
-}
+} */

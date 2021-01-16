@@ -1,14 +1,37 @@
 .chat-screen {
   position: relative;
 
-  background-color: #abc1d1;
-  height: 500vh;
+  /* background-color: #abc1d1; */
+  background-color: var(--dark-theme-bg);
+  height: 200vh;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    /* transform: translateY(-30px); */
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes leftToCenter {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rightToCenter {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
@@ -18,8 +41,6 @@
 
 .main-chat {
   display: flex;
-
-  animation: fadeIn 0.8s linear;
 
   /* main-chat 클래스 코드의 내용이 status-bar 클래스와 alt-header 클래스의 화면 상단 배치로 인해 가려지는 현상을 margin-top 속성을 부여해 무효화  */
   margin-top: 120px;
@@ -32,7 +53,8 @@
 
 .chat-screen .alt-header {
   /* 질문: 이 방법이 최선인지? 스크롤시 비치지 않도록 배경색을 매번 수정해서 코딩해야 하는지? own__alt-header 클래스를 status-bar 클래스의 아래 영역으로 화면상 위치 고정 및 배경색 지정으로 body {height: 1000vh} 테스트시 불투명하게 만듦*/
-  background-color: #abc1d1;
+  /* background-color: #abc1d1; */
+  background-color: var(--dark-theme-bg);
 
   /* 크롬 브라우저로 inspect 했을 때, status-bar 클래스 전체 높이가 26px 이므로 status-bar 덮거나 가리지 않도록 top: 26px 위치로 설정 가능 */
   /* 그러나 alt-header 클래스에 top: 26px 설정하는 대신 z-index: 1 부여 / status-bar 클래스에 z-index: 2 부여하여 덮거나 가리는 현상 무효화   */
@@ -52,9 +74,12 @@
 }
 
 .chat__timestamp {
+  animation: fadeIn 0.8s linear;
+
   /* 질문: 상위 태그인 main-chat 클래스에서 display, flex-direction, align-items 속성 설정으로 텍스트와 background-color(배경색이 좌우로 길게 색칠된 모양) 속성을 중앙정렬 */
-  padding: 15px;
-  background-color: #92a4b2;
+  padding: 15px 20px;
+  /* background-color: #92a4b2; */
+  background-color: var(--dark-theme-nav-bar);
   color: white;
   border-radius: 25px;
   font-size: 14px;
@@ -68,6 +93,8 @@
 
   /* 상대방 message-row, 본인 messge-row 간의 내용 구분용 간격을 margin-bottom 속성으로 부여함 */
   margin-bottom: 25px;
+
+  animation: leftToCenter 0.8s linear;
 }
 
 .message-row img {
@@ -91,6 +118,8 @@
 }
 
 .message__info {
+  color: var(--dark-theme-text-bright);
+
   /* 상위 태그인 message__info 클래스에서 display:flex / align-items: flex-end 설정을 통해 하위 태그인 message__time 클래스가 수쳥축으로 하단부 정렬되도록 설정함 */
   display: flex;
   align-items: flex-end;
@@ -113,7 +142,8 @@
   } */
 
 .message__bubble {
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--dark-theme-bg-chat-receive);
   padding: 13px;
 
   font-size: 18px;
@@ -129,10 +159,12 @@
 /* message-row 클래스의 CSS 속성을 기반으로 message-row--own 클래스의 CSS 속성을 첨가함 */
 .message-row--own {
   justify-content: flex-end;
+  animation: rightToCenter 0.8s linear;
 }
 
 .message-row--own .message__bubble {
-  background-color: var(--yellow);
+  /* background-color: var(--yellow); */
+  background-color: var(--dark-theme-bg-emphasis);
 
   border-radius: 15px;
   border-top-right-radius: 0px;
@@ -152,7 +184,8 @@
 
   width: 100%;
 
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--dark-theme-nav-bar);
 
   /* padding 지정값으로 인해 width 속성이 화면 밖으로 밀려나는 현상을 box-sizing: border-box 속성으로 무효화  */
   padding: 5px 25px;
