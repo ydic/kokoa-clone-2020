@@ -32,8 +32,6 @@
       </div>
     </div>
 
-    <!-- div는 non-semantic 태그, header / main / footer는 div와 동일한 기능을 하며 semantic 태그 -->
-    <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(screen-header.css) -->
     <header class="screen-header">
       <h1 class="screen-header__title">Friends</h1>
       <div class="screen-header__icons">
@@ -54,9 +52,7 @@
       <i class="fas fa-chevron-right fa-xs"></i>
     </a>
 
-    <!-- friends.html main 태그 클래스명: friends-screen(수평으로 padding 적용) -->
     <main class="friends-screen">
-      <!-- 여러 페이지에서 변형해 활용하는 속성이므로 별도의 CSS 파일로 관리(user-component.css) -->
       <div class="user-component">
         <div class="user-component__column">
           <img
@@ -65,7 +61,6 @@
           />
           <div class="user-component__text">
             <h4 class="user-component__title">Mina</h4>
-            <!-- <h6 class="user-component__subtitle"></h6> -->
           </div>
         </div>
 
@@ -88,12 +83,10 @@
               <h4 class="user-component__title user-component__title--not-bold">
                 Channel
               </h4>
-              <!-- <h6 class="user-component__subtitle"></h6> -->
             </div>
           </div>
 
           <div class="user-component__column">
-            <!-- div 태그로 감싼 이유는 부모 태그 클래스 CSS 속성(user-component.css 코드의 .user-component__column: last-child 속성)의 flex 방향(flex-direction: column)에 영향 받지 않도록 하기 위함 -->
             <div>
               <span>2</span>
               <i class="fas fa-chevron-right fa-xs"></i>
@@ -106,27 +99,22 @@
     <nav class="nav-bar">
       <ul class="nav-bar__list">
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="friends.html">
             <i class="fas fa-user fa-2x"></i>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="chats.html">
             <i class="far fa-comment fa-2x"></i>
-            <!-- nav-bar__notification CSS 속성은 position:absolute -->
             <span class="nav-bar__notification badge">1</span>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="find.html">
             <i class="fas fa-search fa-2x"></i>
           </a>
         </li>
         <li class="nav-bar__btn">
-          <!-- Hyperlink 속성 필요하므로 anchor 태그 사용 -->
           <a class="nav-bar__link" href="more.html">
             <i class="fas fa-ellipsis-h fa-2x"></i>
             <span
@@ -144,20 +132,14 @@
         alt=""
       />
 
-      <div class="splash-screen__image-logo">
-        <!-- <span>KokoaTalk</span> -->
-        <!-- <i class="fas fa-comment"></i> -->
-        <!-- <img src="img/logo.png" alt="" /> -->
-      </div>
+      <div class="splash-screen__image-logo"></div>
     </div>
 
-    <!-- media query 적용 -->
     <div class="no-mobile">
       <i class="fas fa-exclamation-circle fa-3x"></i>
       <span>Your screen is too big.</span>
     </div>
 
-    <!-- fontawesome Kit's Code CDN-->
     <script
       src="https://kit.fontawesome.com/8d39c9ab43.js"
       crossorigin="anonymous"

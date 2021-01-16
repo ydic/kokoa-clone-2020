@@ -1,27 +1,20 @@
 .recommended-friends {
-  /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
   border-top: var(--main-border);
   border-bottom: var(--main-border);
-
   margin: 40px 0px;
   padding: 35px 0px;
 }
 
 .recommended-friends__title {
   font-size: 16px;
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-bright);
 }
 
 .recommended-friends span {
-  /* span 태그는 inline 속성이므로 margin 적용하려면 display: block 으로 속성 지정 요망 */
   display: block;
   margin: 70px 0;
-
   text-align: center;
-
   font-size: 18px;
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-dark);
 }
 
@@ -33,7 +26,6 @@
 }
 
 .open-chat__header span {
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-dark);
 }
 
@@ -54,7 +46,6 @@
 
 .open-post__hashtags {
   text-decoration: uppercase;
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-dark);
 }
 
@@ -72,16 +63,13 @@
 }
 
 .open-post__member-count {
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-dark);
   font-size: 14px;
 }
 
-/* open-post__members 클래스 내부에 있는 divvider 클래스로 적용범위 한정*/
 .open-post__members .divider {
   width: 1.15px;
   height: 12px;
-  /* background-color: var(--color-gray-light); */
   background-color: var(--dark-theme-text-dark);
   margin: 0px 5px;
 }
@@ -96,24 +84,18 @@
   border-radius: 10px;
 }
 
-/* postion: absolute 속성을 가진 자식 태그가 찾으려는 부모 태그의 position: relative 속성 */
 .open-post__photo {
   position: relative;
 }
 .open-post__heart-count {
-  /* open-post__heart-count 클래스는 position: absolute 설정으로 인해 relative 부모 태그를 찾으려고 함 */
   position: absolute;
-
   top: 6px;
   right: 6px;
   font-size: 12px;
-
-  /* background-color: var(--black); */
   background-color: var(--dark-theme-bg-emphasis);
   color: white;
   padding: 4px 6px;
   border-radius: 20px;
-
   display: flex;
   align-items: center;
 }
@@ -123,11 +105,7 @@
 }
 
 .open-post__heart-count i {
-  /* will-change 브라우저에게 뭔가가 바뀔 것이라고 얘기해주며, animation 구현 결과물이 훨씬 더 나아보임 */
-  /* 브라우저에게 렌더링 힌트를 주고 element에 실행되길 기대하는 변화를 명시함
-  (브라우저에게 어떤 것이 변할 것인지 지정해서 알려주면, 브라우저가 컴퓨터의 그래픽카드를 이용해서 animation을 가속화하여 보여줌) */
   will-change: transform;
-
   animation: heartBeat 1s linear infinite;
 }
 
@@ -138,9 +116,6 @@
   }
   50% {
     color: tomato;
-
-    /* transform 속성에 scale 효과를 작은 값으로 설정하면 흔들림 현상 발생함 */
-    /* will-change 브라우저에게 뭔가가 바뀔 것이라고 얘기해주며, animation 구현 결과물이 훨씬 더 나아보임 */
     transform: scale(1.4);
   }
   100% {

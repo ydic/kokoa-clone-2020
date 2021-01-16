@@ -2,12 +2,8 @@
   padding: 16px 0px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 20px;
-
-  /* settings__setting 클래스 내부의 i 태그와 span 태그를 수직축 중앙정렬(align-items: center) */
   display: flex;
   align-items: center;
-
-  /* settings__setting-column 클래스를 2열 형태로 화면 배치 */
   justify-content: space-between;
 }
 
@@ -27,15 +23,11 @@
 
 .settings__setting i {
   opacity: 0.8;
-
-  /* fontawesome 아이콘은 텍스트 형식이므로 font-size 속성을 통해 크기 변경 가능 */
   font-size: 22px;
 }
 
-/* settings__setting 내부의 fontawesome 아이콘마다 고유한 크기(배율 무관)가 달라 span 태그 텍스트 시작 지점이 미세하게 상이한 현상을 무효화하기 위해 settings__setting-icon 클래스로 fontawesome 아이콘을 감싸고 width, height 속성 부여 */
 .settings__setting-icon {
   color: var(--yellow);
-
   width: 25px;
   height: 25px;
   margin-right: 20px;

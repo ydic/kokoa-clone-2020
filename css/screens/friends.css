@@ -1,21 +1,15 @@
 .friends-display-link {
   text-align: center;
   display: block;
-  /* background-color: #fafafa; */
   background-color: var(--dark-theme-bg-emphasis);
   color: var(--dark-theme-text-dark);
-
   padding: 15px 0px;
   font-size: 18px;
   margin-bottom: 10px;
-
-  /* margin-top에 negative 속성 부여해 다른 페이지 세부내용 시작점과 유사하게 화면배치  */
   margin-top: -10px;
 }
 
-/* i 태그(italic) 기반의 fontawesome 아이콘의 색상 설정  */
 .friends-display-link i {
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-dark);
 }
 
@@ -24,34 +18,18 @@
 }
 
 .friends-screen__channel {
-  /* 경계선(border-top) 기준으로 margin-top, padding-top */
   margin-top: 25px;
-
-  /* 페이지별 세부내용 영역에서 내용 구분용 경계선(실선) 생성 용도 */
   border-top: var(--main-border);
-
   padding-top: 15px;
 }
 
 .friends-screen__channel-header {
   margin-bottom: 30px;
-
-  /* span 태그와 i 태그를 space-between 으로 화면 배치  */
   display: flex;
   justify-content: space-between;
-
-  /* color: var(--color-gray); */
   color: var(--dark-theme-text-bright);
 }
 
-/* #6.35__CSS 기법으로는 element를 페이지로부터 완전히 없앨 수 없음
-@keyframes 애니메이션이 끝나면 맨 처음의 상태로 돌아감
-애니메이션의 마지막 keyframe을 기억하도록 animation 속성 설정에 forwards 키워드를 추가함
-문제는 여전히 그 element가 아직 그대로 존재함
-(splash-screen 클래스를 @keyframes 코드에서 opacity:0, visibility: hidden 속성으로 설정하더라도 여전히 height: 100vh, width: 100vw 상태로 html에 존재함)
-뭔가를 숨기거나 html을 제거하려면 JavaScript 코드가 필요함(브라우저가 element를 무시하도록 설정해주는 뇌로써 기능함)
-*/
-/* @keyframes 속성 코딩 방법에는 from {} to {} 형태와 0% 50% 100% 형태가 있음 */
 @keyframes hideSplashScreen {
   from {
     opacity: 1;
@@ -71,35 +49,17 @@
 
 .splash-screen {
   position: relative;
-
   animation: hideSplashScreen 0.7s ease-in-out forwards;
   animation-delay: 1.4s;
-
-  /* own__img 태그 추가로 인한 화면내 배경색 조정용도 */
   background-color: black;
-  /* background-color: var(--yellow); */
-
-  /* body 태그가 splash-screen 클래스의 부모 태그이도록 하기 위해 부모 태그(상위 태그)로 splash-screen을 감싸지도 부모 태그(상위 태그)를 position: relative 설정하지도 않음 */
   position: absolute;
-
-  /* own__splash-screen 클래스는 z-index: 2 속성을 가진 status-bar 클래스보다 한 단계 상위의 레이어 */
   z-index: 3;
-
-  /* 100vh 값의 의미는 화면 높이의 100% */
   height: 100vh;
-
-  /* 100vw 값의 의미는 화면 너비의 100% */
   width: 100vw;
-
-  /* top 속성값을 0 으로 설정해야 화면 전체가 splash-screen 클래스로 가려짐 */
   top: 0;
-
-  /* i 태그 아이콘을 화면 정중앙에 배치 */
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* own__img 태그 추가로 인한 i 태그와의 화면내 위치 배치 조정용도 */
   flex-direction: column;
 }
 
@@ -107,16 +67,3 @@
   position: absolute;
   top: 465px;
 }
-
-/* .splash-screen__image-logo span {
-  color: var(--yellow);
-  letter-spacing: 2px;
-
-  font-size: 34px;
-  font-weight: 600;
-}
-
-.splash-screen__image-logo img {
-  width: 24px;
-  height: 20px;
-} */
