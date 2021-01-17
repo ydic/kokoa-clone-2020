@@ -51,7 +51,7 @@
   position: relative;
 
   animation: hideSplashScreen 0.7s ease-in-out forwards;
-  animation-delay: 2s;
+  animation-delay: 2.3s;
 
   background-color: black;
   position: absolute;
